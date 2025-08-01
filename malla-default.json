@@ -629,8 +629,8 @@
       "target": "n29"
     },
     {
-      "source": "n17",
-      "target": "n28"
+      "source": "n6",
+      "target": "n19"
     },
     {
       "source": "n0",
@@ -693,8 +693,8 @@
       "target": "n17"
     },
     {
-      "source": "n6",
-      "target": "n19"
+      "source": "n19",
+      "target": "n28"
     }
   ],
   "courseLabels": [
