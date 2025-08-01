@@ -426,7 +426,7 @@
       "semester": 0,
       "description": "",
       "position": {
-        "x": 230.1155304703104,
+        "x": 235.53811428837142,
         "y": 767.4879739961503
       }
     },
@@ -514,123 +514,115 @@
   "edges": [
     {
       "source": "n2",
-      "target": "n3"
-    },
-    {
-      "source": "n2",
       "target": "n7"
     },
     {
-      "source": "n14",
-      "target": "n9"
-    },
-    {
-      "source": "n12",
-      "target": "n14"
-    },
-    {
-      "source": "n1",
-      "target": "n2"
-    },
-    {
-      "source": "n4",
-      "target": "n6"
-    },
-    {
-      "source": "n5",
-      "target": "n28"
-    },
-    {
-      "source": "n4",
-      "target": "n5"
-    },
-    {
-      "source": "n4",
-      "target": "n9"
-    },
-    {
-      "source": "n12",
-      "target": "n13"
-    },
-    {
       "source": "n2",
       "target": "n14"
     },
     {
-      "source": "n0",
-      "target": "n1"
-    },
-    {
-      "source": "n22",
-      "target": "n23"
-    },
-    {
-      "source": "n19",
-      "target": "n32"
+      "source": "n4",
+      "target": "n9"
     },
     {
       "source": "n11",
       "target": "n12"
     },
     {
-      "source": "n18",
-      "target": "n19"
-    },
-    {
-      "source": "n13",
-      "target": "n15"
-    },
-    {
-      "source": "n15",
-      "target": "n16"
-    },
-    {
-      "source": "n17",
-      "target": "n18"
-    },
-    {
-      "source": "n24",
-      "target": "n25"
-    },
-    {
-      "source": "n23",
-      "target": "n24"
+      "source": "n12",
+      "target": "n14"
     },
     {
       "source": "n3",
       "target": "n4"
     },
     {
-      "source": "n3",
-      "target": "n8"
+      "source": "n19",
+      "target": "n32"
+    },
+    {
+      "source": "n14",
+      "target": "n31"
+    },
+    {
+      "source": "n4",
+      "target": "n5"
+    },
+    {
+      "source": "n1",
+      "target": "n2"
     },
     {
       "source": "n13",
       "target": "n8"
     },
     {
-      "source": "n20",
-      "target": "n21"
-    },
-    {
-      "source": "n21",
-      "target": "n22"
+      "source": "n5",
+      "target": "n28"
     },
     {
       "source": "n29",
       "target": "n30"
     },
     {
-      "source": "n14",
+      "source": "n18",
+      "target": "n19"
+    },
+    {
+      "source": "n20",
+      "target": "n21"
+    },
+    {
+      "source": "n24",
+      "target": "n25"
+    },
+    {
+      "source": "n22",
+      "target": "n23"
+    },
+    {
+      "source": "n17",
+      "target": "n18"
+    },
+    {
+      "source": "n17",
       "target": "n28"
+    },
+    {
+      "source": "n23",
+      "target": "n24"
+    },
+    {
+      "source": "n17",
+      "target": "n31"
+    },
+    {
+      "source": "n3",
+      "target": "n8"
+    },
+    {
+      "source": "n2",
+      "target": "n3"
+    },
+    {
+      "source": "n13",
+      "target": "n15"
     },
     {
       "source": "n11",
       "target": "n29"
     },
     {
-      "source": "n17",
-      "target": "n28"
+      "source": "n12",
+      "target": "n13"
+    },
+    {
+      "source": "n21",
+      "target": "n22"
+    },
+    {
+      "source": "n14",
+      "target": "n9"
     },
     {
       "source": "n0",
@@ -638,15 +630,55 @@
     },
     {
       "source": "n14",
-      "target": "n31"
+      "target": "n28"
     },
     {
-      "source": "n17",
-      "target": "n31"
+      "source": "n0",
+      "target": "n1"
+    },
+    {
+      "source": "n15",
+      "target": "n16"
+    },
+    {
+      "source": "n4",
+      "target": "n6"
     },
     {
       "source": "n37",
       "target": "n38"
+    },
+    {
+      "source": "n43",
+      "target": "n44"
+    },
+    {
+      "source": "n44",
+      "target": "n45"
+    },
+    {
+      "source": "n45",
+      "target": "n46"
+    },
+    {
+      "source": "n39",
+      "target": "n40"
+    },
+    {
+      "source": "n40",
+      "target": "n41"
+    },
+    {
+      "source": "n41",
+      "target": "n42"
+    },
+    {
+      "source": "n12",
+      "target": "n27"
+    },
+    {
+      "source": "n2",
+      "target": "n27"
     }
   ],
   "courseLabels": [
