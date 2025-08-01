@@ -53,21 +53,21 @@
     {
       "id": "n5",
       "title": "Ecuaciones Diferenciales Parciales",
-      "semester": 6,
+      "semester": 7,
       "description": "U1. Ecuaciones del Laplace, Calor, Ondas\nU2. Métodos de resolución. Transformada de Fourier\nU3. Métodos numéricos?",
       "position": {
-        "x": 562.8437501969856,
-        "y": -94.67150609290388
+        "x": 709.2535132846347,
+        "y": -106.87231968354129
       }
     },
     {
       "id": "n6",
       "title": "Teoría de la Medida",
-      "semester": 7,
+      "semester": 6,
       "description": "U1. Medida de Lebesgue\nU2. Integral de Lebesgue\nU3. Espacios L^p",
       "position": {
-        "x": 697.1907515043599,
-        "y": -183.95267739121167
+        "x": 562.9818020073484,
+        "y": -179.8857395276658
       }
     },
     {
@@ -96,8 +96,8 @@
       "semester": 6,
       "description": "",
       "position": {
-        "x": 560.0282711851175,
-        "y": 38.85922506685685
+        "x": 561.3839171396329,
+        "y": 21.23582765815837
       }
     },
     {
@@ -691,6 +691,10 @@
     {
       "source": "n12",
       "target": "n17"
+    },
+    {
+      "source": "n6",
+      "target": "n19"
     }
   ],
   "courseLabels": [
