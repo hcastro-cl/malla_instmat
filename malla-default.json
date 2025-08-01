@@ -1,0 +1,440 @@
+{
+  "nodes": [
+    {
+      "id": "n0",
+      "label": "Introducción a las Matemáticas (Pre-Cálculo)",
+      "position": {
+        "x": 63.57456510689666,
+        "y": -21.754169967511938
+      }
+    },
+    {
+      "id": "n1",
+      "label": "Cálculo I",
+      "position": {
+        "x": 232.79015233974297,
+        "y": -19.792708777782984
+      }
+    },
+    {
+      "id": "n2",
+      "label": "Cálculo II",
+      "position": {
+        "x": 384.0487682227703,
+        "y": -17.30242324223543
+      }
+    },
+    {
+      "id": "n3",
+      "label": "Cálculo Avanzado",
+      "position": {
+        "x": 562.0717252925413,
+        "y": -164.2557537071013
+      }
+    },
+    {
+      "id": "n4",
+      "label": "Análisis Real",
+      "position": {
+        "x": 725.3835320724324,
+        "y": -101.1445679405894
+      }
+    },
+    {
+      "id": "n5",
+      "label": "Ecuaciones Diferenciales Parciales",
+      "position": {
+        "x": 896.3790082417222,
+        "y": -65.44740501821012
+      }
+    },
+    {
+      "id": "n6",
+      "label": "Teoría de la Medida",
+      "position": {
+        "x": 1044.0846797377746,
+        "y": -165.96232120139678
+      }
+    },
+    {
+      "id": "n7",
+      "label": "Ecuaciones Diferenciales Ordinarias",
+      "position": {
+        "x": 562.5710199053134,
+        "y": -14.935119989135327
+      }
+    },
+    {
+      "id": "n8",
+      "label": "Análisis Complejo",
+      "position": {
+        "x": 721.3690266735974,
+        "y": 32.40834157565028
+      }
+    },
+    {
+      "id": "n9",
+      "label": "Análisis Numérico",
+      "position": {
+        "x": 892.4601556429325,
+        "y": 56.90412917003437
+      }
+    },
+    {
+      "id": "n10",
+      "label": "Matemáticas Discretas",
+      "position": {
+        "x": 1223.093228131102,
+        "y": -52.4326003364314
+      }
+    },
+    {
+      "id": "n11",
+      "label": "Álgebra",
+      "position": {
+        "x": 62.83760655052527,
+        "y": 315.78080031792945
+      }
+    },
+    {
+      "id": "n12",
+      "label": "Álgebra Lineal",
+      "position": {
+        "x": 228.33873560206672,
+        "y": 315.2226444899941
+      }
+    },
+    {
+      "id": "n13",
+      "label": "Álgebra Avanzada",
+      "position": {
+        "x": 397.30972920520287,
+        "y": 311.9752216807592
+      }
+    },
+    {
+      "id": "n14",
+      "label": "Optimización",
+      "position": {
+        "x": 561.0612701313131,
+        "y": 136.66650695721617
+      }
+    },
+    {
+      "id": "n15",
+      "label": "Álgebra Abstracta I",
+      "position": {
+        "x": 725.3373053965544,
+        "y": 309.6046224810463
+      }
+    },
+    {
+      "id": "n16",
+      "label": "Algebra Abstracta II",
+      "position": {
+        "x": 1056.502849696075,
+        "y": 317.8759415630679
+      }
+    },
+    {
+      "id": "n17",
+      "label": "Probabilidades",
+      "position": {
+        "x": 564.0842341689373,
+        "y": 237.3883930422338
+      }
+    },
+    {
+      "id": "n18",
+      "label": "Inferencia Estadística",
+      "position": {
+        "x": 888.5561514368318,
+        "y": 235.18987773056935
+      }
+    },
+    {
+      "id": "n19",
+      "label": "Procesos Estocásticos",
+      "position": {
+        "x": 1055.1427501392955,
+        "y": 239.18330952661162
+      }
+    },
+    {
+      "id": "n20",
+      "label": "Programación I (Bioinformática) o Programación Estructurada (Videojuegos)",
+      "position": {
+        "x": 73.2316532984875,
+        "y": 442.99425847604607
+      }
+    },
+    {
+      "id": "n21",
+      "label": "Programación Avanzada (Bioinformática) o Programación orientada a objetos (Videojuegos)",
+      "position": {
+        "x": 247.64795877791025,
+        "y": 440.2153329625784
+      }
+    },
+    {
+      "id": "n22",
+      "label": "Algoritmos y Estructuras de Datos (Bioinformática)",
+      "position": {
+        "x": 407.6808149485526,
+        "y": 447.0232241326187
+      }
+    },
+    {
+      "id": "n23",
+      "label": "Bases de Datos (Bioinformática)",
+      "position": {
+        "x": 728.7708226006616,
+        "y": 448.61464602281194
+      }
+    },
+    {
+      "id": "n24",
+      "label": "Minería de Datos (Bioinformática)",
+      "position": {
+        "x": 899.9860215873414,
+        "y": 446.7510662900999
+      }
+    },
+    {
+      "id": "n25",
+      "label": "Visualización y Comunicación de Datos",
+      "position": {
+        "x": 1226.320927789769,
+        "y": 449.85932616252063
+      }
+    },
+    {
+      "id": "n26",
+      "label": "Introducción a la Ingeniería Matemática",
+      "position": {
+        "x": 59.77488995036349,
+        "y": 120.30426366393651
+      }
+    },
+    {
+      "id": "n27",
+      "label": "Laboratorio?",
+      "position": {
+        "x": 560.6604851046332,
+        "y": 608.248748703543
+      }
+    },
+    {
+      "id": "n28",
+      "label": "Modelamiento Matemático",
+      "position": {
+        "x": 1219.0015724817295,
+        "y": 80.0265178760303
+      }
+    },
+    {
+      "id": "n29",
+      "label": "Física General (Bioinformática)",
+      "position": {
+        "x": 235.32447205598893,
+        "y": 605.5972456165019
+      }
+    },
+    {
+      "id": "n30",
+      "label": "Electricidad y Magnetismo (Bioinformática)",
+      "position": {
+        "x": 395.5399690612643,
+        "y": 605.7065772054809
+      }
+    },
+    {
+      "id": "n31",
+      "label": "Ing. Económica y Evaluación de Proyectos (Ingeniería)",
+      "position": {
+        "x": 1059.4045613715748,
+        "y": 587.1982035572809
+      }
+    },
+    {
+      "id": "n32",
+      "label": "Otro curso o un electivo?",
+      "position": {
+        "x": 1227.6547206828893,
+        "y": 241.64534106303572
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "n2",
+      "target": "n3",
+      "label": "requisito"
+    },
+    {
+      "source": "n2",
+      "target": "n7",
+      "label": "requisito"
+    },
+    {
+      "source": "n14",
+      "target": "n9",
+      "label": "requisito"
+    },
+    {
+      "source": "n12",
+      "target": "n14",
+      "label": "requisito"
+    },
+    {
+      "source": "n1",
+      "target": "n2",
+      "label": "requisito"
+    },
+    {
+      "source": "n4",
+      "target": "n6",
+      "label": "requisito"
+    },
+    {
+      "source": "n5",
+      "target": "n28",
+      "label": "requisito"
+    },
+    {
+      "source": "n4",
+      "target": "n5",
+      "label": "requisito"
+    },
+    {
+      "source": "n4",
+      "target": "n9",
+      "label": "requisito"
+    },
+    {
+      "source": "n12",
+      "target": "n13",
+      "label": "requisito"
+    },
+    {
+      "source": "n2",
+      "target": "n14",
+      "label": "requisito"
+    },
+    {
+      "source": "n0",
+      "target": "n1",
+      "label": "requisito"
+    },
+    {
+      "source": "n22",
+      "target": "n23",
+      "label": "requisito"
+    },
+    {
+      "source": "n19",
+      "target": "n32",
+      "label": "requisito"
+    },
+    {
+      "source": "n11",
+      "target": "n12",
+      "label": "requisito"
+    },
+    {
+      "source": "n18",
+      "target": "n19",
+      "label": "requisito"
+    },
+    {
+      "source": "n13",
+      "target": "n15",
+      "label": "requisito"
+    },
+    {
+      "source": "n15",
+      "target": "n16",
+      "label": "requisito"
+    },
+    {
+      "source": "n17",
+      "target": "n18",
+      "label": "requisito"
+    },
+    {
+      "source": "n24",
+      "target": "n25",
+      "label": "requisito"
+    },
+    {
+      "source": "n23",
+      "target": "n24",
+      "label": "requisito"
+    },
+    {
+      "source": "n3",
+      "target": "n4",
+      "label": "requisito"
+    },
+    {
+      "source": "n3",
+      "target": "n8",
+      "label": "requisito"
+    },
+    {
+      "source": "n13",
+      "target": "n8",
+      "label": "requisito"
+    },
+    {
+      "source": "n20",
+      "target": "n21",
+      "label": "requisito"
+    },
+    {
+      "source": "n21",
+      "target": "n22",
+      "label": "requisito"
+    },
+    {
+      "source": "n29",
+      "target": "n30",
+      "label": "requisito"
+    }
+  ],
+  "courseLabels": [
+    "Introducción a las Matemáticas (Pre-Cálculo)",
+    "Cálculo I",
+    "Cálculo II",
+    "Cálculo Avanzado",
+    "Análisis Real",
+    "Ecuaciones Diferenciales Parciales",
+    "Teoría de la Medida",
+    "Ecuaciones Diferenciales Ordinarias",
+    "Análisis Complejo",
+    "Análisis Numérico",
+    "Matemáticas Discretas",
+    "Álgebra",
+    "Álgebra Lineal",
+    "Álgebra Avanzada",
+    "Optimización",
+    "Álgebra Abstracta I",
+    "Algebra Abstracta II",
+    "Probabilidades",
+    "Inferencia Estadística",
+    "Procesos Estocásticos",
+    "Programación I (Bioinformática) o Programación Estructurada (Videojuegos)",
+    "Programación Avanzada (Bioinformática) o Programación orientada a objetos (Videojuegos)",
+    "Algoritmos y Estructuras de Datos (Bioinformática)",
+    "Bases de Datos (Bioinformática)",
+    "Minería de Datos (Bioinformática)",
+    "Visualización y Comunicación de Datos",
+    "Introducción a la Ingeniería Matemática",
+    "Laboratorio?",
+    "Modelamiento Matemático",
+    "Física General (Bioinformática)",
+    "Electricidad y Magnetismo (Bioinformática)",
+    "Ing. Económica y Evaluación de Proyectos (Ingeniería)",
+    "Otro curso o un electivo?"
+  ]
+}
