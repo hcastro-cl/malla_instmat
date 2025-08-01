@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -12,7 +11,7 @@
     }
     #cy-container {
       position: relative;
-      width: 100%;
+      width: 80%;
       height: 800px;
       margin-bottom: 20px;
     }
@@ -58,10 +57,32 @@
     #node-editor {
       position: absolute;
       background: white;
-      padding: 10px;
+      padding: 20px;
       border: 1px solid #ccc;
       z-index: 1000;
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      width: 300px;
+    }
+    #node-editor label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    #node-editor input, #node-editor select, #node-editor textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    #node-editor textarea {
+      min-height: 80px;
+    }
+    #node-editor-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
     }
     #course-list-textarea {
       width: 100%;
@@ -80,12 +101,51 @@
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
+	.tooltip {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 300px;
+      z-index: 1000;
+      pointer-events: none;
+      font-size: 14px;
+      line-height: 1.4;
+      white-space: pre-line; /* Esto ayuda a mostrar los saltos de línea */
+    }
+    /* Estilos para la leyenda de colores */
+    #semester-legend {
+      margin-top: 30px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    #semester-legend h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .legend-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+    }
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      margin-right: 8px;
+      border: 1px solid #ccc;
+    }
   </style>
 </head>
 <body>
-
-<h2>Editor de Malla Curricular</h2>
-<p>Haz doble clic en los nodos para editar el texto. Haz clic en dos nodos para conectarlos. Haz clic en las conexiones para eliminarlas.</p>
 
 <div class="controls">
   <button onclick="exportFullGraph()">Exportar Malla</button>
@@ -96,11 +156,18 @@
   <button onclick="showCourseListEditor()">Editar Lista de Cursos</button>
   <button onclick="clearGraph()">Limpiar Conexiones</button>
   <button onclick="resetNodePositions()">Reiniciar Posiciones</button>
+<button onclick="addNewNode()">Agregar Curso</button>
+
 
   <span id="loading-indicator" style="display:none;"><span class="loading"></span> Cargando...</span>
   <input type="file" id="file-input" accept=".json" />
-  <input type="color" id="node-color-picker" value="#6bb1f8" style="display:none;"/>
-<button onclick="showColorPicker()" id="color-btn">Cambiar Color de Nodo</button>
+</div>
+
+<!-- Nueva sección: Leyenda de colores por semestre -->
+<div id="semester-legend">
+  <div class="legend-items" id="legend-items-container">
+    <!-- Los elementos de la leyenda se generarán automáticamente con JavaScript -->
+  </div>
 </div>
 
 <div id="course-list-editor" style="display:none; margin-bottom:20px;">
@@ -116,10 +183,36 @@
 </div>
 
 <div id="node-editor">
-  <input type="text" id="node-edit-input" style="width:200px;">
-  <button onclick="saveNodeEdit()">Guardar</button>
-  <button onclick="cancelNodeEdit()">Cancelar</button>
+  <h3 style="margin-top: 0;">Editar Curso</h3>
+  <label for="node-edit-title">Título del curso:</label>
+  <input type="text" id="node-edit-title">
+  
+  <label for="node-edit-semester">Semestre:</label>
+  <select id="node-edit-semester">
+    <option value="0">No asignado</option>
+    <option value="1">Semestre 1</option>
+    <option value="2">Semestre 2</option>
+    <option value="3">Semestre 3</option>
+    <option value="4">Semestre 4</option>
+    <option value="5">Semestre 5</option>
+    <option value="6">Semestre 6</option>
+    <option value="7">Semestre 7</option>
+    <option value="8">Semestre 8</option>
+    <option value="9">Semestre 9</option>
+    <option value="10">Semestre 10</option>
+  </select>
+  
+  <label for="node-edit-description">Descripción:</label>
+  <textarea id="node-edit-description"></textarea>
+  
+  <div id="node-editor-buttons">
+    <button onclick="saveNodeEdit()">Guardar</button>
+    <button onclick="cancelNodeEdit()">Cancelar</button>
+	<button onclick="deleteNode()">Eliminar Curso</button>
+  </div>
 </div>
+
+<div id="tooltip" class="tooltip" style="display: none;"></div>
 
 <script>
   // Lista de cursos por defecto
@@ -159,6 +252,36 @@
     "Otro curso o un electivo?"
   ];
 
+  // Colores por semestre
+  const semesterColors = {
+    0: '#6bb1f8',  // No asignado (azul claro)
+    1: '#FF9AA2',  // Semestre 1 (rojo claro)
+    2: '#FFB7B2',  // Semestre 2 (rojo más claro)
+    3: '#FFDAC1',  // Semestre 3 (naranja claro)
+    4: '#E2F0CB',  // Semestre 4 (verde claro)
+    5: '#B5EAD7',  // Semestre 5 (verde agua)
+    6: '#C7CEEA',  // Semestre 6 (azul lavanda)
+    7: '#A2D7D8',  // Semestre 7 (turquesa)
+    8: '#B5EAD7',  // Semestre 8 (verde menta)
+    9: '#D8B5FF',  // Semestre 9 (lavanda)
+    10: '#FF9AA2'  // Semestre 10 (igual al 1 para completar)
+  };
+
+  // Nombres de semestres para la leyenda
+  const semesterNames = {
+    0: "No asignado",
+    1: "Semestre 1",
+    2: "Semestre 2",
+    3: "Semestre 3",
+    4: "Semestre 4",
+    5: "Semestre 5",
+    6: "Semestre 6",
+    7: "Semestre 7",
+    8: "Semestre 8",
+    9: "Semestre 9",
+    10: "Semestre 10"
+  };
+
   // Variables globales
   let elements = [];
   let cy;
@@ -168,6 +291,43 @@
   const ROWS = 1;
   const COLUMN_WIDTH = 150;
   const ROW_HEIGHT = 150;
+  
+  function formatDescriptionText(text) {
+    if (!text) return '';
+    // Convertir saltos de línea en <br> y mantener múltiples espacios
+    return text.replace(/\n/g, '<br>');
+  }
+
+  // Función para crear la leyenda de colores
+  function createColorLegend() {
+    const container = document.getElementById('legend-items-container');
+    container.innerHTML = '';
+    
+    // Ordenar los semestres (0 al final)
+    const sortedSemesters = Object.keys(semesterColors)
+      .map(Number)
+      .sort((a, b) => {
+        if (a === 0) return 1;
+        if (b === 0) return -1;
+        return a - b;
+      });
+    
+    sortedSemesters.forEach(semester => {
+      const item = document.createElement('div');
+      item.className = 'legend-item';
+      
+      const colorBox = document.createElement('div');
+      colorBox.className = 'legend-color';
+      colorBox.style.backgroundColor = semesterColors[semester];
+      
+      const label = document.createElement('span');
+      label.textContent = semesterNames[semester];
+      
+      item.appendChild(colorBox);
+      item.appendChild(label);
+      container.appendChild(item);
+    });
+  }
 
   // Función para dibujar la cuadrícula de fondo
   function drawGrid() {
@@ -221,12 +381,18 @@
       const id = 'n' + index;
       
       elements.push({ 
-  data: { id, label, color: '#6bb1f8' }, // default color
-  position: { 
-    x: col * COLUMN_WIDTH + 100, 
-    y: row * ROW_HEIGHT + 100 
-  }
-});
+        data: { 
+          id, 
+          label,
+          title: label,  // Inicialmente el título es igual al label
+          semester: 0,   // Semestre no asignado por defecto
+          description: "" // Descripción vacía por defecto
+        },
+        position: { 
+          x: col * COLUMN_WIDTH + 100, 
+          y: row * ROW_HEIGHT + 100 
+        }
+      });
     });
 
     cy = cytoscape({
@@ -235,21 +401,21 @@
       style: [
         {
           selector: 'node',
-style: {
-  'label': 'data(label)',
-  'text-valign': 'center',
-  'text-halign': 'center',
-  'text-wrap': 'wrap',
-  'text-max-width': '110px',
-  'background-color': 'data(color)', // <-- NEW
-  'shape': 'roundrectangle',
-  'width': 'label',
-  'height': 'label',
-  'padding': '12px',
-  'font-size': '13px',
-  'border-width': '0px',
-  'border-color': '#f00'
-}
+          style: {
+            'label': 'data(title)',
+            'text-valign': 'center',
+            'text-halign': 'center',
+            'text-wrap': 'wrap',
+            'text-max-width': '110px',
+            'background-color': 'data(color)',
+            'shape': 'roundrectangle',
+            'width': 'label',
+            'height': 'label',
+            'padding': '12px',
+            'font-size': '13px',
+            'border-width': '0px',
+            'border-color': '#f00'
+          }
         },
         {
           selector: 'node:selected',
@@ -276,7 +442,13 @@ style: {
       ],
       layout: {
         name: 'preset'
-      }
+      },
+	  userZoomingEnabled: false
+    });
+
+    // Asignar colores iniciales basados en semestre
+    cy.nodes().forEach(node => {
+      updateNodeColor(node);
     });
 
     // Lógica para crear conexiones
@@ -312,44 +484,74 @@ style: {
       const node = evt.target;
       currentlyEditingNode = node;
       const editor = document.getElementById('node-editor');
-      document.getElementById('node-edit-input').value = node.data('label');
+      document.getElementById('node-edit-title').value = node.data('title');
+      document.getElementById('node-edit-semester').value = node.data('semester') || 0;
+      document.getElementById('node-edit-description').value = node.data('description') || '';
       
       // Posicionar editor cerca del nodo
       const nodePos = node.renderedPosition();
       editor.style.left = (nodePos.x + 20) + 'px';
       editor.style.top = (nodePos.y + 20) + 'px';
       editor.style.display = 'block';
+      
+      // Enfocar el primer campo
+      document.getElementById('node-edit-title').focus();
+    });
+
+    // Mostrar tooltip con descripción al pasar el mouse
+  cy.on('mouseover', 'node', function(evt){
+    const node = evt.target;
+    const description = node.data('description');
+    if (description && description.trim() !== '') {
+      const tooltip = document.getElementById('tooltip');
+      const formattedDesc = formatDescriptionText(description);
+      tooltip.innerHTML = `<strong>${node.data('title')}</strong><br>${formattedDesc}`;
+      tooltip.style.display = 'block';
+      
+      // Actualizar posición mientras el mouse se mueve
+      cy.on('mousemove', function(e) {
+        if (e.originalEvent) {
+          tooltip.style.left = (e.originalEvent.clientX + 10) + 'px';
+          tooltip.style.top = (e.originalEvent.clientY + 10) + 'px';
+        }
+      });
+    }
+  });
+
+    // Ocultar tooltip al quitar el mouse
+    cy.on('mouseout', 'node', function(){
+      document.getElementById('tooltip').style.display = 'none';
+      cy.off('mousemove');
     });
   }
 
-  // Inicializar el gráfico
-  initializeGraph();
-
-  // Seleccionar color del nodo
-  function showColorPicker() {
-  if (!cy) return;
-  const selected = cy.$('node:selected');
-  if (selected.length === 0) {
-    alert('Selecciona un nodo para cambiar su color.');
-    return;
+  // Actualizar color del nodo basado en el semestre
+  function updateNodeColor(node) {
+    const semester = node.data('semester') || 0;
+    node.data('color', semesterColors[semester]);
   }
-  const colorPicker = document.getElementById('node-color-picker');
-  // Use the color of the first selected node
-  colorPicker.value = selected.data('color') || '#6bb1f8';
-  colorPicker.style.display = 'inline-block';
 
-  colorPicker.onchange = function() {
-    const color = colorPicker.value;
-    selected.forEach(node => node.data('color', color));
-    colorPicker.style.display = 'none';
-  };
-}
-  
+  // Inicializar el gráfico y la leyenda
+  initializeGraph();
+  createColorLegend();
+
   // Funciones para editar nodos
   function saveNodeEdit() {
     if (currentlyEditingNode) {
-      const newLabel = document.getElementById('node-edit-input').value;
-      currentlyEditingNode.data('label', newLabel);
+      const newTitle = document.getElementById('node-edit-title').value;
+      const newSemester = parseInt(document.getElementById('node-edit-semester').value);
+      const newDescription = document.getElementById('node-edit-description').value;
+      
+      currentlyEditingNode.data('title', newTitle);
+      currentlyEditingNode.data('semester', newSemester);
+      currentlyEditingNode.data('description', newDescription);
+      
+      // Actualizar el label (texto visible) con el título
+      currentlyEditingNode.data('label', newTitle);
+      
+      // Actualizar color basado en semestre
+      updateNodeColor(currentlyEditingNode);
+      
       cancelNodeEdit();
     }
   }
@@ -393,8 +595,8 @@ style: {
   // Exportar conexiones
   function downloadEdges() {
     const edges = cy.edges().map(edge => ({
-      source: cy.getElementById(edge.data('source')).data('label'),
-      target: cy.getElementById(edge.data('target')).data('label'),
+      source: cy.getElementById(edge.data('source')).data('title'),
+      target: cy.getElementById(edge.data('target')).data('title'),
       relationship: edge.data('label')
     }));
 
@@ -412,7 +614,9 @@ style: {
     const graphData = {
       nodes: cy.nodes().map(node => ({
         id: node.id(),
-        label: node.data('label'),
+        title: node.data('title'),
+        semester: node.data('semester'),
+        description: node.data('description'),
         position: node.position()
       })),
       edges: cy.edges().map(edge => ({
@@ -437,7 +641,9 @@ style: {
     const graphData = {
       nodes: cy.nodes().map(node => ({
         id: node.id(),
-        label: node.data('label'),
+        title: node.data('title'),
+        semester: node.data('semester'),
+        description: node.data('description'),
         position: node.position()
       })),
       edges: cy.edges().map(edge => ({
@@ -522,7 +728,19 @@ style: {
       graphData.nodes.forEach(node => {
         const cyNode = cy.getElementById(node.id);
         if (cyNode) {
-          cyNode.position(node.position);
+          // Actualizar todos los atributos del nodo
+          cyNode.data('title', node.title || node.label || '');
+          cyNode.data('semester', node.semester || 0);
+          cyNode.data('description', node.description || '');
+          cyNode.data('label', node.title || node.label || '');
+          
+          // Actualizar posición si existe
+          if (node.position) {
+            cyNode.position(node.position);
+          }
+          
+          // Actualizar color basado en semestre
+          updateNodeColor(cyNode);
         }
       });
     }
@@ -580,6 +798,48 @@ style: {
       loadServerGraph();
     }
   });
+  
+  let newNodeCount = 0;
+
+function addNewNode() {
+  // Crear un ID único para el nuevo nodo
+  const id = 'new' + newNodeCount++;
+  
+  // Crear la posición para el nuevo nodo
+  const position = {
+    x: 100 + (cy.nodes().length % COLUMNS) * COLUMN_WIDTH,
+    y: 100 + Math.floor(cy.nodes().length / COLUMNS) * ROW_HEIGHT
+  };
+  
+  // Agregar el nodo al gráfico
+  const newNode = cy.add({
+    group: 'nodes',
+    data: {
+      id: id,
+      title: "Nuevo Curso",
+      semester: 0,
+      description: "",
+      label: "Nuevo Curso",
+      color: semesterColors[0]
+    },
+    position: position
+  });
+
+  // Actualizar el color del nuevo nodo
+  updateNodeColor(newNode);
+}
+
+function deleteNode() {
+  if (currentlyEditingNode) {
+    const nodeTitle = currentlyEditingNode.data('title');
+    if (confirm(`¿Seguro que deseas eliminar el curso "${nodeTitle}"?`)) {
+      cy.remove(currentlyEditingNode);
+      cancelNodeEdit();
+    }
+  }
+}
+
+
 </script>
 
 </body>

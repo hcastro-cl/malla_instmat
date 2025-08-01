@@ -2,266 +2,392 @@
   "nodes": [
     {
       "id": "n0",
-      "label": "Introducción a las Matemáticas (Pre-Cálculo)",
+      "title": "Introducción a las Matemáticas (Pre-Cálculo)",
+      "semester": 1,
+      "description": "U1. Números reales, expresiones algebraicas\nU2. Ecuaciones e inecuaciones. Geometría Analítica\nU3. Trigonometría y Funciones reales.",
       "position": {
-        "x": 63.57456510689666,
-        "y": -21.754169967511938
+        "x": -96.80797502650896,
+        "y": -17.267945068675406
       }
     },
     {
       "id": "n1",
-      "label": "Cálculo I",
+      "title": "Cálculo I",
+      "semester": 2,
+      "description": "U1. Límites, continuidad, definición de derivadas.\nU2. Aplicaciones de las derivadas\nU3. Integración (Integral indefinida y definida)",
       "position": {
-        "x": 232.79015233974297,
-        "y": -19.792708777782984
+        "x": 64.55671863337339,
+        "y": -15.306483878946448
       }
     },
     {
       "id": "n2",
-      "label": "Cálculo II",
+      "title": "Cálculo II",
+      "semester": 3,
+      "description": "U1. Cálculo diferencial en varias variables\nU2. Cálculo integral de funciones en varias variables.\nU3. Cálculo vectorial (Stokes, Gauss, Green)",
       "position": {
-        "x": 384.0487682227703,
-        "y": -17.30242324223543
+        "x": 222.54467186465553,
+        "y": -10.573085893980629
       }
     },
     {
       "id": "n3",
-      "label": "Cálculo Avanzado",
+      "title": "Cálculo Avanzado",
+      "semester": 4,
+      "description": "Profundizar lo visto en los cursos anteriores (demostraciones), contenidos nuevos",
       "position": {
-        "x": 562.0717252925413,
-        "y": -164.2557537071013
+        "x": 411.7831911815178,
+        "y": -174.34975972948345
       }
     },
     {
       "id": "n4",
-      "label": "Análisis Real",
+      "title": "Análisis Real",
+      "semester": 5,
+      "description": "U1. Conjuntos y topología\nU2. Espacios métricos\nU3. Espacios vectoriales normados, Espacios de Hilbert",
       "position": {
-        "x": 725.3835320724324,
-        "y": -101.1445679405894
+        "x": 589.6752288826276,
+        "y": -108.99546151355335
       }
     },
     {
       "id": "n5",
-      "label": "Ecuaciones Diferenciales Parciales",
+      "title": "Ecuaciones Diferenciales Parciales",
+      "semester": 6,
+      "description": "U1. Ecuaciones del Laplace, Calor, Ondas\nU2. Métodos de resolución. Transformada de Fourier\nU3. Métodos numéricos?",
       "position": {
-        "x": 896.3790082417222,
-        "y": -65.44740501821012
+        "x": 756.1844801530808,
+        "y": -86.7569732876836
       }
     },
     {
       "id": "n6",
-      "label": "Teoría de la Medida",
+      "title": "Teoría de la Medida",
+      "semester": 7,
+      "description": "U1. Medida de Lebesgue\nU2. Integral de Lebesgue\nU3. Espacios L^p",
       "position": {
-        "x": 1044.0846797377746,
-        "y": -165.96232120139678
+        "x": 878.0943584808233,
+        "y": -178.29943967319718
       }
     },
     {
       "id": "n7",
-      "label": "Ecuaciones Diferenciales Ordinarias",
+      "title": "Ecuaciones Diferenciales Ordinarias",
+      "semester": 4,
+      "description": "U1. EDOs de primer orden\nU2. EDos de lineales de orden n. Laplace\nU3. Sistemas de EDOs",
       "position": {
-        "x": 562.5710199053134,
-        "y": -14.935119989135327
+        "x": 403.310035996617,
+        "y": -10.448895090298791
       }
     },
     {
       "id": "n8",
-      "label": "Análisis Complejo",
+      "title": "Análisis Complejo",
+      "semester": 5,
+      "description": "U1. Funciones holomorfas\nU2. Teorema de Cauchy\nU3. Funciones meromorfas. Residuos",
       "position": {
-        "x": 721.3690266735974,
-        "y": 32.40834157565028
+        "x": 584.5391672590835,
+        "y": 34.65145402506852
       }
     },
     {
       "id": "n9",
-      "label": "Análisis Numérico",
+      "title": "Análisis Numérico",
+      "semester": 6,
+      "description": "",
       "position": {
-        "x": 892.4601556429325,
-        "y": 56.90412917003437
+        "x": 755.6302962284186,
+        "y": 51.29634804648872
       }
     },
     {
       "id": "n10",
-      "label": "Matemáticas Discretas",
+      "title": "Matemáticas Discretas?",
+      "semester": 8,
+      "description": "U1. Grafos\nU2. Algoritmos\nU3. Complejidad (P vs NP)",
       "position": {
-        "x": 1223.093228131102,
-        "y": -52.4326003364314
+        "x": 1033.5502261552588,
+        "y": -92.80862442596009
       }
     },
     {
       "id": "n11",
-      "label": "Álgebra",
+      "title": "Álgebra",
+      "semester": 1,
+      "description": "U1. Lógica y Conjuntos\nU2. Sucesiones, Sumatorias, Teorema del Binomio, Números Complejos\nU3. Polinomios, Fracciones parciales, Cónicas. ",
       "position": {
-        "x": 62.83760655052527,
-        "y": 315.78080031792945
+        "x": -109.88205205468076,
+        "y": 325.8748063403116
       }
     },
     {
       "id": "n12",
-      "label": "Álgebra Lineal",
+      "title": "Álgebra Lineal",
+      "semester": 2,
+      "description": "U1. Matrices y sistemas de ecuaciones lineales.\nU2. Espacios vectoriales de dimensión finita\nU3. Transformaciones Lineales y diagonalización",
       "position": {
-        "x": 228.33873560206672,
-        "y": 315.2226444899941
+        "x": 61.22685812040629,
+        "y": 326.43820673708535
       }
     },
     {
       "id": "n13",
-      "label": "Álgebra Avanzada",
+      "title": "Álgebra Avanzada",
+      "semester": 3,
+      "description": "Profundizar lo visto en los cursos anteriores (demostraciones), contenidos nuevos",
       "position": {
-        "x": 397.30972920520287,
-        "y": 311.9752216807592
+        "x": 235.8056328470881,
+        "y": 324.3123401525596
       }
     },
     {
       "id": "n14",
-      "label": "Optimización",
+      "title": "Optimización",
+      "semester": 4,
+      "description": "U1. Programación lineal\nU2. Optimización sin restricciones\nU3. Optimización con restricciones",
       "position": {
-        "x": 561.0612701313131,
-        "y": 136.66650695721617
+        "x": 408.5296235708715,
+        "y": 136.6665069572162
       }
     },
     {
       "id": "n15",
-      "label": "Álgebra Abstracta I",
+      "title": "Álgebra Abstracta I",
+      "semester": 5,
+      "description": "",
       "position": {
-        "x": 725.3373053965544,
-        "y": 309.6046224810463
+        "x": 579.5349961843675,
+        "y": 318.57707227871936
       }
     },
     {
       "id": "n16",
-      "label": "Algebra Abstracta II",
+      "title": "Algebra Abstracta II",
+      "semester": 7,
+      "description": "",
       "position": {
-        "x": 1056.502849696075,
-        "y": 317.8759415630679
+        "x": 894.9987533379601,
+        "y": 316.75438533835876
       }
     },
     {
       "id": "n17",
-      "label": "Probabilidades",
+      "title": "Probabilidades",
+      "semester": 4,
+      "description": "",
       "position": {
-        "x": 564.0842341689373,
-        "y": 237.3883930422338
+        "x": 419.40348118145954,
+        "y": 238.5099492669429
       }
     },
     {
       "id": "n18",
-      "label": "Inferencia Estadística",
+      "title": "Inferencia Estadística",
+      "semester": 6,
+      "description": "",
       "position": {
-        "x": 888.5561514368318,
-        "y": 235.18987773056935
+        "x": 725.930498854008,
+        "y": 231.8252090564419
       }
     },
     {
       "id": "n19",
-      "label": "Procesos Estocásticos",
+      "title": "Procesos Estocásticos",
+      "semester": 7,
+      "description": "",
       "position": {
-        "x": 1055.1427501392955,
-        "y": 239.18330952661162
+        "x": 884.6662039835077,
+        "y": 231.3324159536477
       }
     },
     {
       "id": "n20",
-      "label": "Programación I (Bioinformática) o Programación Estructurada (Videojuegos)",
+      "title": "Programación I (Bioinformática) o Programación Estructurada (Videojuegos)",
+      "semester": 1,
+      "description": "",
       "position": {
-        "x": 73.2316532984875,
-        "y": 442.99425847604607
+        "x": -103.97423020555509,
+        "y": 451.9667082737192
       }
     },
     {
       "id": "n21",
-      "label": "Programación Avanzada (Bioinformática) o Programación orientada a objetos (Videojuegos)",
+      "title": "Programación Avanzada (Bioinformática) o Programación orientada a objetos (Videojuegos)",
+      "semester": 2,
+      "description": "",
       "position": {
-        "x": 247.64795877791025,
-        "y": 440.2153329625784
+        "x": 76.04985639741331,
+        "y": 454.7955638837971
       }
     },
     {
       "id": "n22",
-      "label": "Algoritmos y Estructuras de Datos (Bioinformática)",
+      "title": "Algoritmos y Estructuras de Datos (Bioinformática)",
+      "semester": 3,
+      "description": "",
       "position": {
-        "x": 407.6808149485526,
-        "y": 447.0232241326187
+        "x": 254.02761216340178,
+        "y": 460.48189882912834
       }
     },
     {
       "id": "n23",
-      "label": "Bases de Datos (Bioinformática)",
+      "title": "Bases de Datos (Bioinformática)",
+      "semester": 5,
+      "description": "",
       "position": {
-        "x": 728.7708226006616,
-        "y": 448.61464602281194
+        "x": 566.1451700178377,
+        "y": 456.46553959577585
       }
     },
     {
       "id": "n24",
-      "label": "Minería de Datos (Bioinformática)",
+      "title": "Minería de Datos (Bioinformática)",
+      "semester": 6,
+      "description": "",
       "position": {
-        "x": 899.9860215873414,
-        "y": 446.7510662900999
+        "x": 747.4543750268997,
+        "y": 460.20974098660946
       }
     },
     {
       "id": "n25",
-      "label": "Visualización y Comunicación de Datos",
+      "title": "Visualización y Comunicación de Datos",
+      "semester": 8,
+      "description": "",
       "position": {
-        "x": 1226.320927789769,
-        "y": 449.85932616252063
+        "x": 1022.1976948927072,
+        "y": 452.1024386119389
       }
     },
     {
       "id": "n26",
-      "label": "Introducción a la Ingeniería Matemática",
+      "title": "Introducción a la Ingeniería Matemática",
+      "semester": 1,
+      "description": "",
       "position": {
-        "x": 59.77488995036349,
-        "y": 120.30426366393651
+        "x": -97.24298150891472,
+        "y": 134.8844945851552
       }
     },
     {
       "id": "n27",
-      "label": "Laboratorio?",
+      "title": "Laboratorio?",
+      "semester": 4,
+      "description": "Curso donde se enseñe a usar herramientas computacionales para resolver problemas matemáticos",
       "position": {
-        "x": 560.6604851046332,
-        "y": 608.248748703543
+        "x": 410.37195099360974,
+        "y": 530.8613691986131
       }
     },
     {
       "id": "n28",
-      "label": "Modelamiento Matemático",
+      "title": "Modelamiento Matemático",
+      "semester": 8,
+      "description": "Formulación, modelamiento, simulación.\n\nPodría ser un curso colegiado donde se usen Ecuaciones Diferenciales, Probabilidad, Estadística, Combinatoria, etc",
       "position": {
-        "x": 1219.0015724817295,
-        "y": 80.0265178760303
+        "x": 1032.8232391800138,
+        "y": 49.744499808883795
       }
     },
     {
       "id": "n29",
-      "label": "Física General (Bioinformática)",
+      "title": "Física General (Bioinformática)",
+      "semester": 2,
+      "description": "",
       "position": {
-        "x": 235.32447205598893,
-        "y": 605.5972456165019
+        "x": 70.4557070237468,
+        "y": 602.2325769423747
       }
     },
     {
       "id": "n30",
-      "label": "Electricidad y Magnetismo (Bioinformática)",
+      "title": "Electricidad y Magnetismo (Bioinformática)",
+      "semester": 3,
+      "description": "",
       "position": {
-        "x": 395.5399690612643,
-        "y": 605.7065772054809
+        "x": 248.61610362436815,
+        "y": 600.0987960819353
       }
     },
     {
       "id": "n31",
-      "label": "Ing. Económica y Evaluación de Proyectos (Ingeniería)",
+      "title": "Ing. Económica y Evaluación de Proyectos (Ingeniería)",
+      "semester": 7,
+      "description": "",
       "position": {
-        "x": 1059.4045613715748,
-        "y": 587.1982035572809
+        "x": 895.6573525640416,
+        "y": 575.9826413101896
       }
     },
     {
       "id": "n32",
-      "label": "Otro curso o un electivo?",
+      "title": "Otro curso o un electivo?",
+      "semester": 8,
+      "description": "",
       "position": {
-        "x": 1227.6547206828893,
-        "y": 241.64534106303572
+        "x": 1041.476387381173,
+        "y": 232.67289126536272
+      }
+    },
+    {
+      "id": "new0",
+      "title": "Electivo I",
+      "semester": 9,
+      "description": "",
+      "position": {
+        "x": 1193.517319091402,
+        "y": -35.452349298165856
+      }
+    },
+    {
+      "id": "new1",
+      "title": "Electivo II",
+      "semester": 9,
+      "description": "",
+      "position": {
+        "x": 1198.8365661039238,
+        "y": 109.22840368931175
+      }
+    },
+    {
+      "id": "new2",
+      "title": "Electivo III",
+      "semester": 9,
+      "description": "",
+      "position": {
+        "x": 1198.5480319929009,
+        "y": 247.17981932853485
+      }
+    },
+    {
+      "id": "new3",
+      "title": "Electivo IV",
+      "semester": 10,
+      "description": "",
+      "position": {
+        "x": 1359.763594239992,
+        "y": 58.75837357740102
+      }
+    },
+    {
+      "id": "new4",
+      "title": "Trabajo de Titulo",
+      "semester": 10,
+      "description": "",
+      "position": {
+        "x": 1385.2708532972788,
+        "y": 375.03722894537566
+      }
+    },
+    {
+      "id": "new5",
+      "title": "Proyecto de título",
+      "semester": 9,
+      "description": "",
+      "position": {
+        "x": 1213.3842168057581,
+        "y": 373.9156727206665
       }
     }
   ],
@@ -399,6 +525,41 @@
     {
       "source": "n29",
       "target": "n30",
+      "label": "requisito"
+    },
+    {
+      "source": "n14",
+      "target": "n28",
+      "label": "requisito"
+    },
+    {
+      "source": "n11",
+      "target": "n29",
+      "label": "requisito"
+    },
+    {
+      "source": "n17",
+      "target": "n28",
+      "label": "requisito"
+    },
+    {
+      "source": "n0",
+      "target": "n29",
+      "label": "requisito"
+    },
+    {
+      "source": "n14",
+      "target": "n31",
+      "label": "requisito"
+    },
+    {
+      "source": "n17",
+      "target": "n31",
+      "label": "requisito"
+    },
+    {
+      "source": "new5",
+      "target": "new4",
       "label": "requisito"
     }
   ],
