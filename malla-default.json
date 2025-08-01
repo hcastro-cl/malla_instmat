@@ -389,173 +389,260 @@
         "x": 1214.4088460824075,
         "y": 262.7867973244574
       }
+    },
+    {
+      "id": "n39",
+      "title": "Formacion fundamental I",
+      "semester": 0,
+      "description": "",
+      "position": {
+        "x": -279.8330777465773,
+        "y": 763.3055129577629
+      }
+    },
+    {
+      "id": "n40",
+      "title": "Formacion fundamental II",
+      "semester": 0,
+      "description": "",
+      "position": {
+        "x": -120.0740019903396,
+        "y": 767.4879739961503
+      }
+    },
+    {
+      "id": "n41",
+      "title": "Formacion fundamental III",
+      "semester": 0,
+      "description": "",
+      "position": {
+        "x": 50.83830320159791,
+        "y": 763.305512957763
+      }
+    },
+    {
+      "id": "n42",
+      "title": "Formacion fundamental IV",
+      "semester": 0,
+      "description": "",
+      "position": {
+        "x": 230.1155304703104,
+        "y": 767.4879739961503
+      }
+    },
+    {
+      "id": "n43",
+      "title": "Idioma I",
+      "semester": 0,
+      "description": "",
+      "position": {
+        "x": -282.1074672743786,
+        "y": 688.0212142667878
+      }
+    },
+    {
+      "id": "n44",
+      "title": "Idioma II",
+      "semester": 0,
+      "description": "",
+      "position": {
+        "x": -124.45874239346294,
+        "y": 690.2409242437626
+      }
+    },
+    {
+      "id": "n45",
+      "title": "Idioma III",
+      "semester": 0,
+      "description": "",
+      "position": {
+        "x": 40.8769480806246,
+        "y": 695.8175389616124
+      }
+    },
+    {
+      "id": "n46",
+      "title": "Idioma IV",
+      "semester": 0,
+      "description": "",
+      "position": {
+        "x": 209.0009459136371,
+        "y": 695.8175389616124
+      }
+    },
+    {
+      "id": "n47",
+      "title": "Minor I",
+      "semester": 0,
+      "description": "",
+      "position": {
+        "x": 556.9707683973126,
+        "y": 700
+      }
+    },
+    {
+      "id": "n48",
+      "title": "Minor II",
+      "semester": 0,
+      "description": "",
+      "position": {
+        "x": 729.2772272687127,
+        "y": 697.2116926410748
+      }
+    },
+    {
+      "id": "n49",
+      "title": "Minor III",
+      "semester": 0,
+      "description": "",
+      "position": {
+        "x": 880.6713809481748,
+        "y": 693.0292316026874
+      }
+    },
+    {
+      "id": "n50",
+      "title": "Minor IV",
+      "semester": 0,
+      "description": "",
+      "position": {
+        "x": 1036.2479956660247,
+        "y": 690.2409242437625
+      }
     }
   ],
   "edges": [
     {
       "source": "n2",
-      "target": "n3",
-      "label": "requisito"
+      "target": "n3"
     },
     {
       "source": "n2",
-      "target": "n7",
-      "label": "requisito"
+      "target": "n7"
     },
     {
       "source": "n14",
-      "target": "n9",
-      "label": "requisito"
+      "target": "n9"
     },
     {
       "source": "n12",
-      "target": "n14",
-      "label": "requisito"
+      "target": "n14"
     },
     {
       "source": "n1",
-      "target": "n2",
-      "label": "requisito"
+      "target": "n2"
     },
     {
       "source": "n4",
-      "target": "n6",
-      "label": "requisito"
+      "target": "n6"
     },
     {
       "source": "n5",
-      "target": "n28",
-      "label": "requisito"
+      "target": "n28"
     },
     {
       "source": "n4",
-      "target": "n5",
-      "label": "requisito"
+      "target": "n5"
     },
     {
       "source": "n4",
-      "target": "n9",
-      "label": "requisito"
+      "target": "n9"
     },
     {
       "source": "n12",
-      "target": "n13",
-      "label": "requisito"
+      "target": "n13"
     },
     {
       "source": "n2",
-      "target": "n14",
-      "label": "requisito"
+      "target": "n14"
     },
     {
       "source": "n0",
-      "target": "n1",
-      "label": "requisito"
+      "target": "n1"
     },
     {
       "source": "n22",
-      "target": "n23",
-      "label": "requisito"
+      "target": "n23"
     },
     {
       "source": "n19",
-      "target": "n32",
-      "label": "requisito"
+      "target": "n32"
     },
     {
       "source": "n11",
-      "target": "n12",
-      "label": "requisito"
+      "target": "n12"
     },
     {
       "source": "n18",
-      "target": "n19",
-      "label": "requisito"
+      "target": "n19"
     },
     {
       "source": "n13",
-      "target": "n15",
-      "label": "requisito"
+      "target": "n15"
     },
     {
       "source": "n15",
-      "target": "n16",
-      "label": "requisito"
+      "target": "n16"
     },
     {
       "source": "n17",
-      "target": "n18",
-      "label": "requisito"
+      "target": "n18"
     },
     {
       "source": "n24",
-      "target": "n25",
-      "label": "requisito"
+      "target": "n25"
     },
     {
       "source": "n23",
-      "target": "n24",
-      "label": "requisito"
+      "target": "n24"
     },
     {
       "source": "n3",
-      "target": "n4",
-      "label": "requisito"
+      "target": "n4"
     },
     {
       "source": "n3",
-      "target": "n8",
-      "label": "requisito"
+      "target": "n8"
     },
     {
       "source": "n13",
-      "target": "n8",
-      "label": "requisito"
+      "target": "n8"
     },
     {
       "source": "n20",
-      "target": "n21",
-      "label": "requisito"
+      "target": "n21"
     },
     {
       "source": "n21",
-      "target": "n22",
-      "label": "requisito"
+      "target": "n22"
     },
     {
       "source": "n29",
-      "target": "n30",
-      "label": "requisito"
+      "target": "n30"
     },
     {
       "source": "n14",
-      "target": "n28",
-      "label": "requisito"
+      "target": "n28"
     },
     {
       "source": "n11",
-      "target": "n29",
-      "label": "requisito"
+      "target": "n29"
     },
     {
       "source": "n17",
-      "target": "n28",
-      "label": "requisito"
+      "target": "n28"
     },
     {
       "source": "n0",
-      "target": "n29",
-      "label": "requisito"
+      "target": "n29"
     },
     {
       "source": "n14",
-      "target": "n31",
-      "label": "requisito"
+      "target": "n31"
     },
     {
       "source": "n17",
-      "target": "n31",
-      "label": "requisito"
+      "target": "n31"
     },
     {
       "source": "n37",
@@ -601,6 +688,18 @@
     "Electivo III",
     "Electivo IV",
     "Proyecto de titulo",
-    "Trabajo de titulo"
+    "Trabajo de titulo",
+    "Formacion fundamental I",
+    "Formacion fundamental II",
+    "Formacion fundamental III",
+    "Formacion fundamental IV",
+    "Idioma I",
+    "Idioma II",
+    "Idioma III",
+    "Idioma IV",
+    "Minor I",
+    "Minor II",
+    "Minor III",
+    "Minor IV"
   ]
 }

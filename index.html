@@ -167,13 +167,6 @@
   </div>
 </div>
 
-<div id="course-list-editor" style="display:none; margin-bottom:20px;">
-  <h3>Editar Lista de Cursos</h3>
-  <textarea id="course-list-textarea"></textarea>
-  <button onclick="updateCoursesFromText()">Actualizar Cursos</button>
-  <button onclick="document.getElementById('course-list-editor').style.display='none'">Cancelar</button>
-</div>
-
 <div id="cy-container">
   <canvas id="grid-canvas"></canvas>
   <div id="cy"></div>
@@ -214,7 +207,7 @@
 <script>
   // Lista de cursos por defecto
   let courseLabels = [
-    "Introducción a las Matemáticas (Pre-Cálculo)",
+        "Introducción a las Matemáticas (Pre-Cálculo)",
     "Cálculo I",
     "Cálculo II",
     "Cálculo Avanzado",
@@ -246,7 +239,25 @@
     "Física General (Bioinformática)",
     "Electricidad y Magnetismo (Bioinformática)",
     "Ing. Económica y Evaluación de Proyectos (Ingeniería)",
-    "Otro curso o un electivo?"
+    "Otro curso o un electivo?",
+    "Electivo I",
+    "Electivo II",
+    "Electivo III",
+    "Electivo IV",
+    "Proyecto de titulo",
+    "Trabajo de titulo",
+	"Formacion fundamental I",
+	"Formacion fundamental II",
+	"Formacion fundamental III",
+	"Formacion fundamental IV",
+	"Idioma I",
+	"Idioma II",
+	"Idioma III",
+	"Idioma IV",
+	"Minor I",
+	"Minor II",
+	"Minor III",
+	"Minor IV"
   ];
 
   // Colores por semestre
@@ -440,7 +451,7 @@
       layout: {
         name: 'preset'
       },
-	  userZoomingEnabled: false
+	  //userZoomingEnabled: false
     });
 
     // Asignar colores iniciales basados en semestre
