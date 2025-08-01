@@ -331,63 +331,63 @@
       }
     },
     {
-      "id": "new0",
+      "id": "n33",
       "title": "Electivo I",
       "semester": 9,
       "description": "",
       "position": {
-        "x": 1044.0906989084178,
-        "y": -31.152837411888378
+        "x": 1035.4295612831904,
+        "y": -95.94589850744568
       }
     },
     {
-      "id": "new1",
+      "id": "n34",
       "title": "Electivo II",
       "semester": 9,
       "description": "",
       "position": {
-        "x": 1045.9758706964385,
-        "y": 72.86673659957802
+        "x": 1037.8496547700656,
+        "y": 22.11802670305409
       }
     },
     {
-      "id": "new2",
+      "id": "n35",
       "title": "Electivo III",
       "semester": 9,
       "description": "",
       "position": {
-        "x": 1046.7303949408563,
-        "y": 183.67019587266188
+        "x": 1039.1345182068399,
+        "y": 154.93994256486621
       }
     },
     {
-      "id": "new3",
-      "title": "Proyecto de Título",
-      "semester": 9,
-      "description": "",
-      "position": {
-        "x": 1039.5703863800536,
-        "y": 286.55912234052533
-      }
-    },
-    {
-      "id": "new5",
+      "id": "n36",
       "title": "Electivo IV",
       "semester": 10,
       "description": "",
       "position": {
-        "x": 1193.7168532552803,
-        "y": 175.75566306744153
+        "x": 1217.515269459364,
+        "y": -86.86405810663796
       }
     },
     {
-      "id": "new4",
-      "title": "Trabajo de Título ",
+      "id": "n37",
+      "title": "Proyecto de título",
+      "semester": 9,
+      "description": "",
+      "position": {
+        "x": 1053.056545581398,
+        "y": 261.65156727435647
+      }
+    },
+    {
+      "id": "n38",
+      "title": "Trabajo de título",
       "semester": 10,
       "description": "",
       "position": {
-        "x": 1198.6155667288767,
-        "y": 289.9510649713341
+        "x": 1214.4088460824075,
+        "y": 262.7867973244574
       }
     }
   ],
@@ -395,167 +395,171 @@
     {
       "source": "n2",
       "target": "n3",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n2",
       "target": "n7",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n14",
       "target": "n9",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n12",
       "target": "n14",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n1",
       "target": "n2",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n4",
       "target": "n6",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n5",
       "target": "n28",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n4",
       "target": "n5",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n4",
       "target": "n9",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n12",
       "target": "n13",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n2",
       "target": "n14",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n0",
       "target": "n1",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n22",
       "target": "n23",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n19",
       "target": "n32",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n11",
       "target": "n12",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n18",
       "target": "n19",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n13",
       "target": "n15",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n15",
       "target": "n16",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n17",
       "target": "n18",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n24",
       "target": "n25",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n23",
       "target": "n24",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n3",
       "target": "n4",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n3",
       "target": "n8",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n13",
       "target": "n8",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n20",
       "target": "n21",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n21",
       "target": "n22",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n29",
       "target": "n30",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n14",
       "target": "n28",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n11",
       "target": "n29",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n17",
       "target": "n28",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n0",
       "target": "n29",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n14",
       "target": "n31",
-      "label": ""
+      "label": "requisito"
     },
     {
       "source": "n17",
       "target": "n31",
-      "label": ""
+      "label": "requisito"
+    },
+    {
+      "source": "n37",
+      "target": "n38"
     }
   ],
   "courseLabels": [
@@ -591,6 +595,12 @@
     "Física General (Bioinformática)",
     "Electricidad y Magnetismo (Bioinformática)",
     "Ing. Económica y Evaluación de Proyectos (Ingeniería)",
-    "Otro curso o un electivo?"
+    "Otro curso o un electivo?",
+    "Electivo I",
+    "Electivo II",
+    "Electivo III",
+    "Electivo IV",
+    "Proyecto de titulo",
+    "Trabajo de titulo"
   ]
 }
