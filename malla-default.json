@@ -6,8 +6,8 @@
       "semester": 1,
       "description": "U1. Números reales, expresiones algebraicas\nU2. Ecuaciones e inecuaciones. Geometría Analítica\nU3. Trigonometría y Funciones reales.",
       "position": {
-        "x": -96.80797502650896,
-        "y": -17.267945068675406
+        "x": -282.2341721773838,
+        "y": -87.36809277205492
       }
     },
     {
@@ -16,8 +16,8 @@
       "semester": 2,
       "description": "U1. Límites, continuidad, definición de derivadas.\nU2. Aplicaciones de las derivadas\nU3. Integración (Integral indefinida y definida)",
       "position": {
-        "x": 64.55671863337339,
-        "y": -15.306483878946448
+        "x": -99.38717518904643,
+        "y": -85.40663158232603
       }
     },
     {
@@ -26,8 +26,8 @@
       "semester": 3,
       "description": "U1. Cálculo diferencial en varias variables\nU2. Cálculo integral de funciones en varias variables.\nU3. Cálculo vectorial (Stokes, Gauss, Green)",
       "position": {
-        "x": 222.54467186465553,
-        "y": -10.573085893980629
+        "x": 33.726532082971985,
+        "y": -81.80388114096304
       }
     },
     {
@@ -36,8 +36,8 @@
       "semester": 4,
       "description": "Profundizar lo visto en los cursos anteriores (demostraciones), contenidos nuevos",
       "position": {
-        "x": 411.7831911815178,
-        "y": -174.34975972948345
+        "x": 206.00533824579094,
+        "y": -178.87234990389504
       }
     },
     {
@@ -46,8 +46,8 @@
       "semester": 5,
       "description": "U1. Conjuntos y topología\nU2. Espacios métricos\nU3. Espacios vectoriales normados, Espacios de Hilbert",
       "position": {
-        "x": 589.6752288826276,
-        "y": -108.99546151355335
+        "x": 394.0732038393267,
+        "y": -114.64869923156783
       }
     },
     {
@@ -56,8 +56,8 @@
       "semester": 6,
       "description": "U1. Ecuaciones del Laplace, Calor, Ondas\nU2. Métodos de resolución. Transformada de Fourier\nU3. Métodos numéricos?",
       "position": {
-        "x": 756.1844801530808,
-        "y": -86.7569732876836
+        "x": 562.8437501969856,
+        "y": -94.67150609290388
       }
     },
     {
@@ -66,8 +66,8 @@
       "semester": 7,
       "description": "U1. Medida de Lebesgue\nU2. Integral de Lebesgue\nU3. Espacios L^p",
       "position": {
-        "x": 878.0943584808233,
-        "y": -178.29943967319718
+        "x": 697.1907515043599,
+        "y": -183.95267739121167
       }
     },
     {
@@ -76,8 +76,8 @@
       "semester": 4,
       "description": "U1. EDOs de primer orden\nU2. EDos de lineales de orden n. Laplace\nU3. Sistemas de EDOs",
       "position": {
-        "x": 403.310035996617,
-        "y": -10.448895090298791
+        "x": 203.18542077890433,
+        "y": -63.58932963963488
       }
     },
     {
@@ -86,8 +86,8 @@
       "semester": 5,
       "description": "U1. Funciones holomorfas\nU2. Teorema de Cauchy\nU3. Funciones meromorfas. Residuos",
       "position": {
-        "x": 584.5391672590835,
-        "y": 34.65145402506852
+        "x": 395.72102747739984,
+        "y": -7.182505088238608
       }
     },
     {
@@ -96,8 +96,8 @@
       "semester": 6,
       "description": "",
       "position": {
-        "x": 755.6302962284186,
-        "y": 51.29634804648872
+        "x": 560.0282711851175,
+        "y": 38.85922506685685
       }
     },
     {
@@ -106,8 +106,8 @@
       "semester": 8,
       "description": "U1. Grafos\nU2. Algoritmos\nU3. Complejidad (P vs NP)",
       "position": {
-        "x": 1033.5502261552588,
-        "y": -92.80862442596009
+        "x": 879.7821602252649,
+        "y": -97.33121460037167
       }
     },
     {
@@ -116,8 +116,8 @@
       "semester": 1,
       "description": "U1. Lógica y Conjuntos\nU2. Sucesiones, Sumatorias, Teorema del Binomio, Números Complejos\nU3. Polinomios, Fracciones parciales, Cónicas. ",
       "position": {
-        "x": -109.88205205468076,
-        "y": 325.8748063403116
+        "x": -294.17760166195274,
+        "y": 238.81494548288867
       }
     },
     {
@@ -126,8 +126,8 @@
       "semester": 2,
       "description": "U1. Matrices y sistemas de ecuaciones lineales.\nU2. Espacios vectoriales de dimensión finita\nU3. Transformaciones Lineales y diagonalización",
       "position": {
-        "x": 61.22685812040629,
-        "y": 326.43820673708535
+        "x": -129.8525767484831,
+        "y": 243.90093605407395
       }
     },
     {
@@ -136,8 +136,8 @@
       "semester": 3,
       "description": "Profundizar lo visto en los cursos anteriores (demostraciones), contenidos nuevos",
       "position": {
-        "x": 235.8056328470881,
-        "y": 324.3123401525596
+        "x": 53.77137832702185,
+        "y": 244.0363645567541
       }
     },
     {
@@ -146,8 +146,8 @@
       "semester": 4,
       "description": "U1. Programación lineal\nU2. Optimización sin restricciones\nU3. Optimización con restricciones",
       "position": {
-        "x": 408.5296235708715,
-        "y": 136.6665069572162
+        "x": 202.75177063514434,
+        "y": 46.214703468984574
       }
     },
     {
@@ -156,8 +156,8 @@
       "semester": 5,
       "description": "",
       "position": {
-        "x": 579.5349961843675,
-        "y": 318.57707227871936
+        "x": 391.8475039462869,
+        "y": 245.0849819445312
       }
     },
     {
@@ -166,8 +166,8 @@
       "semester": 7,
       "description": "",
       "position": {
-        "x": 894.9987533379601,
-        "y": 316.75438533835876
+        "x": 722.0096791667171,
+        "y": 268.13654096343424
       }
     },
     {
@@ -176,8 +176,8 @@
       "semester": 4,
       "description": "",
       "position": {
-        "x": 419.40348118145954,
-        "y": 238.5099492669429
+        "x": 207.97239052771815,
+        "y": 151.45008840951994
       }
     },
     {
@@ -186,8 +186,8 @@
       "semester": 6,
       "description": "",
       "position": {
-        "x": 725.930498854008,
-        "y": 231.8252090564419
+        "x": 563.117252575191,
+        "y": 178.68477450710583
       }
     },
     {
@@ -196,8 +196,8 @@
       "semester": 7,
       "description": "",
       "position": {
-        "x": 884.6662039835077,
-        "y": 231.3324159536477
+        "x": 711.6771298122645,
+        "y": 180.45327649151739
       }
     },
     {
@@ -206,8 +206,8 @@
       "semester": 1,
       "description": "",
       "position": {
-        "x": -103.97423020555509,
-        "y": 451.9667082737192
+        "x": -291.6617224436357,
+        "y": 396.5649786371772
       }
     },
     {
@@ -216,8 +216,8 @@
       "semester": 2,
       "description": "",
       "position": {
-        "x": 76.04985639741331,
-        "y": 454.7955638837971
+        "x": -113.89893092787312,
+        "y": 403.9164244216668
       }
     },
     {
@@ -226,8 +226,8 @@
       "semester": 3,
       "description": "",
       "position": {
-        "x": 254.02761216340178,
-        "y": 460.48189882912834
+        "x": 60.68688220730665,
+        "y": 409.60275936699804
       }
     },
     {
@@ -236,8 +236,8 @@
       "semester": 5,
       "description": "",
       "position": {
-        "x": 566.1451700178377,
-        "y": 456.46553959577585
+        "x": 392.02544830299183,
+        "y": 408.9783427644543
       }
     },
     {
@@ -246,8 +246,8 @@
       "semester": 6,
       "description": "",
       "position": {
-        "x": 747.4543750268997,
-        "y": 460.20974098660946
+        "x": 569.9427106812451,
+        "y": 413.8531916988907
       }
     },
     {
@@ -256,8 +256,8 @@
       "semester": 8,
       "description": "",
       "position": {
-        "x": 1022.1976948927072,
-        "y": 452.1024386119389
+        "x": 880.8667519423456,
+        "y": 413.6604221294405
       }
     },
     {
@@ -266,8 +266,8 @@
       "semester": 1,
       "description": "",
       "position": {
-        "x": -97.24298150891472,
-        "y": 134.8844945851552
+        "x": -286.06112129059824,
+        "y": 78.35211740501045
       }
     },
     {
@@ -276,8 +276,8 @@
       "semester": 4,
       "description": "Curso donde se enseñe a usar herramientas computacionales para resolver problemas matemáticos",
       "position": {
-        "x": 410.37195099360974,
-        "y": 530.8613691986131
+        "x": 209.11668823229436,
+        "y": 518.4242462189812
       }
     },
     {
@@ -286,8 +286,8 @@
       "semester": 8,
       "description": "Formulación, modelamiento, simulación.\n\nPodría ser un curso colegiado donde se usen Ecuaciones Diferenciales, Probabilidad, Estadística, Combinatoria, etc",
       "position": {
-        "x": 1032.8232391800138,
-        "y": 49.744499808883795
+        "x": 882.447115880829,
+        "y": 81.40263102976489
       }
     },
     {
@@ -296,8 +296,8 @@
       "semester": 2,
       "description": "",
       "position": {
-        "x": 70.4557070237468,
-        "y": 602.2325769423747
+        "x": -128.53826065036287,
+        "y": 595.4486916807573
       }
     },
     {
@@ -306,8 +306,8 @@
       "semester": 3,
       "description": "",
       "position": {
-        "x": 248.61610362436815,
-        "y": 600.0987960819353
+        "x": 45.099545775846984,
+        "y": 597.8375009947296
       }
     },
     {
@@ -316,8 +316,8 @@
       "semester": 7,
       "description": "",
       "position": {
-        "x": 895.6573525640416,
-        "y": 575.9826413101896
+        "x": 720.4069833055927,
+        "y": 531.8873871096765
       }
     },
     {
@@ -326,8 +326,68 @@
       "semester": 8,
       "description": "",
       "position": {
-        "x": 1041.476387381173,
-        "y": 232.67289126536272
+        "x": 886.5776739075764,
+        "y": 185.18569443404112
+      }
+    },
+    {
+      "id": "new0",
+      "title": "Electivo I",
+      "semester": 9,
+      "description": "",
+      "position": {
+        "x": 1044.0906989084178,
+        "y": -31.152837411888378
+      }
+    },
+    {
+      "id": "new1",
+      "title": "Electivo II",
+      "semester": 9,
+      "description": "",
+      "position": {
+        "x": 1045.9758706964385,
+        "y": 72.86673659957802
+      }
+    },
+    {
+      "id": "new2",
+      "title": "Electivo III",
+      "semester": 9,
+      "description": "",
+      "position": {
+        "x": 1046.7303949408563,
+        "y": 183.67019587266188
+      }
+    },
+    {
+      "id": "new3",
+      "title": "Proyecto de Título",
+      "semester": 9,
+      "description": "",
+      "position": {
+        "x": 1039.5703863800536,
+        "y": 286.55912234052533
+      }
+    },
+    {
+      "id": "new5",
+      "title": "Electivo IV",
+      "semester": 10,
+      "description": "",
+      "position": {
+        "x": 1193.7168532552803,
+        "y": 175.75566306744153
+      }
+    },
+    {
+      "id": "new4",
+      "title": "Trabajo de Título ",
+      "semester": 10,
+      "description": "",
+      "position": {
+        "x": 1198.6155667288767,
+        "y": 289.9510649713341
       }
     }
   ],
@@ -335,167 +395,172 @@
     {
       "source": "n2",
       "target": "n3",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n2",
       "target": "n7",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n14",
       "target": "n9",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n12",
       "target": "n14",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n1",
       "target": "n2",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n4",
       "target": "n6",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n5",
       "target": "n28",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n4",
       "target": "n5",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n4",
       "target": "n9",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n12",
       "target": "n13",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n2",
       "target": "n14",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n0",
       "target": "n1",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n22",
       "target": "n23",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n19",
       "target": "n32",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n11",
       "target": "n12",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n18",
       "target": "n19",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n13",
       "target": "n15",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n15",
       "target": "n16",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n17",
       "target": "n18",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n24",
       "target": "n25",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n23",
       "target": "n24",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n3",
       "target": "n4",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n3",
       "target": "n8",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n13",
       "target": "n8",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n20",
       "target": "n21",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n21",
       "target": "n22",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n29",
       "target": "n30",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n14",
       "target": "n28",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n11",
       "target": "n29",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n17",
       "target": "n28",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n0",
       "target": "n29",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n14",
       "target": "n31",
-      "label": "requisito"
+      "label": ""
     },
     {
       "source": "n17",
       "target": "n31",
-      "label": "requisito"
+      "label": ""
+    },
+    {
+      "source": "new3",
+      "target": "new4",
+      "label": ""
     }
   ],
   "courseLabels": [
