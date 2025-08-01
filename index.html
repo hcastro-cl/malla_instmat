@@ -39,6 +39,7 @@
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
+      justify-content: space-between;
     }
     button, select, textarea {
       padding: 10px 15px;
@@ -154,10 +155,9 @@
   <button onclick="exportFullGraph()">Exportar Malla</button>
   <button onclick="document.getElementById('file-input').click()">Importar Malla</button>
   <button onclick="addNewNode()">Agregar Curso</button>
-
-
   <span id="loading-indicator" style="display:none;"><span class="loading"></span> Cargando...</span>
   <input type="file" id="file-input" accept=".json" />
+	<img src="logo.png" alt="Logo" style="height:40px; margin-left:auto;">	
 </div>
 
 <!-- Nueva sección: Leyenda de colores por semestre -->
