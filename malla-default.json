@@ -329,66 +329,6 @@
         "x": 1041.476387381173,
         "y": 232.67289126536272
       }
-    },
-    {
-      "id": "new0",
-      "title": "Electivo I",
-      "semester": 9,
-      "description": "",
-      "position": {
-        "x": 1193.517319091402,
-        "y": -35.452349298165856
-      }
-    },
-    {
-      "id": "new1",
-      "title": "Electivo II",
-      "semester": 9,
-      "description": "",
-      "position": {
-        "x": 1198.8365661039238,
-        "y": 109.22840368931175
-      }
-    },
-    {
-      "id": "new2",
-      "title": "Electivo III",
-      "semester": 9,
-      "description": "",
-      "position": {
-        "x": 1198.5480319929009,
-        "y": 247.17981932853485
-      }
-    },
-    {
-      "id": "new3",
-      "title": "Electivo IV",
-      "semester": 10,
-      "description": "",
-      "position": {
-        "x": 1359.763594239992,
-        "y": 58.75837357740102
-      }
-    },
-    {
-      "id": "new4",
-      "title": "Trabajo de Titulo",
-      "semester": 10,
-      "description": "",
-      "position": {
-        "x": 1385.2708532972788,
-        "y": 375.03722894537566
-      }
-    },
-    {
-      "id": "new5",
-      "title": "Proyecto de título",
-      "semester": 9,
-      "description": "",
-      "position": {
-        "x": 1213.3842168057581,
-        "y": 373.9156727206665
-      }
     }
   ],
   "edges": [
@@ -555,11 +495,6 @@
     {
       "source": "n17",
       "target": "n31",
-      "label": "requisito"
-    },
-    {
-      "source": "new5",
-      "target": "new4",
       "label": "requisito"
     }
   ],
