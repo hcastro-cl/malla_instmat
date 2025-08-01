@@ -202,9 +202,9 @@
     },
     {
       "id": "n20",
-      "title": "Programación I (Bioinformática) o Programación Estructurada (Videojuegos)",
+      "title": "Programación I",
       "semester": 1,
-      "description": "",
+      "description": "Programación I (Bioinformática) o Programación Estructurada (Videojuegos)",
       "position": {
         "x": -291.6617224436357,
         "y": 396.5649786371772
@@ -212,9 +212,9 @@
     },
     {
       "id": "n21",
-      "title": "Programación Avanzada (Bioinformática) o Programación orientada a objetos (Videojuegos)",
+      "title": "Programación II",
       "semester": 2,
-      "description": "",
+      "description": "Programación Avanzada (Bioinformática) o Programación orientada a objetos (Videojuegos)",
       "position": {
         "x": -113.89893092787312,
         "y": 403.9164244216668
@@ -222,9 +222,9 @@
     },
     {
       "id": "n22",
-      "title": "Algoritmos y Estructuras de Datos (Bioinformática)",
+      "title": "Algoritmos y Estructuras de Datos",
       "semester": 3,
-      "description": "",
+      "description": "Se imparte en Bioinformática",
       "position": {
         "x": 60.68688220730665,
         "y": 409.60275936699804
@@ -232,9 +232,9 @@
     },
     {
       "id": "n23",
-      "title": "Bases de Datos (Bioinformática)",
+      "title": "Bases de Datos",
       "semester": 5,
-      "description": "",
+      "description": "Se imparte en Bioinformática",
       "position": {
         "x": 392.02544830299183,
         "y": 408.9783427644543
@@ -242,9 +242,9 @@
     },
     {
       "id": "n24",
-      "title": "Minería de Datos (Bioinformática)",
+      "title": "Minería de Datos",
       "semester": 6,
-      "description": "",
+      "description": "Se imparte en Bioinformática",
       "position": {
         "x": 569.9427106812451,
         "y": 413.8531916988907
@@ -266,8 +266,8 @@
       "semester": 1,
       "description": "",
       "position": {
-        "x": -286.06112129059824,
-        "y": 78.35211740501045
+        "x": -283.34982938156764,
+        "y": 590.7862882117818
       }
     },
     {
@@ -292,9 +292,9 @@
     },
     {
       "id": "n29",
-      "title": "Física General (Bioinformática)",
+      "title": "Física General",
       "semester": 2,
-      "description": "",
+      "description": "Se imparte en Bioinformática",
       "position": {
         "x": -128.53826065036287,
         "y": 595.4486916807573
@@ -302,9 +302,9 @@
     },
     {
       "id": "n30",
-      "title": "Electricidad y Magnetismo (Bioinformática)",
+      "title": "Electricidad y Magnetismo",
       "semester": 3,
-      "description": "",
+      "description": "Se imparte en Bioinformática",
       "position": {
         "x": 45.099545775846984,
         "y": 597.8375009947296
@@ -312,9 +312,9 @@
     },
     {
       "id": "n31",
-      "title": "Ing. Económica y Evaluación de Proyectos (Ingeniería)",
+      "title": "Ing. Económica y Evaluación de Proyectos",
       "semester": 7,
-      "description": "",
+      "description": "Lo imparten en Ingeniería",
       "position": {
         "x": 720.4069833055927,
         "y": 531.8873871096765
