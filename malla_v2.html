@@ -1,0 +1,564 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Editor de Mapa Curricular</title>
+  <script src="https://unpkg.com/cytoscape@3.24.0/dist/cytoscape.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+    #cy-container {
+      position: relative;
+      width: 100%;
+      height: 800px;
+      margin-bottom: 20px;
+    }
+    #cy {
+      width: 100%;
+      height: 100%;
+      border: 1px solid #ccc;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background-color: transparent;
+    }
+    #grid-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .controls {
+      margin: 15px 0;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    button, select, textarea {
+      padding: 10px 15px;
+      font-size: 14px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background-color: white;
+    }
+    button:hover, select:hover {
+      background-color: #f5f5f5;
+    }
+    #file-input, #node-editor {
+      display: none;
+    }
+    #node-editor {
+      position: absolute;
+      background: white;
+      padding: 10px;
+      border: 1px solid #ccc;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    #course-list-textarea {
+      width: 100%;
+      min-height: 100px;
+      margin-bottom: 10px;
+    }
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(0,0,0,.3);
+      border-radius: 50%;
+      border-top-color: #000;
+      animation: spin 1s ease-in-out infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+<h2>Editor de Malla Curricular</h2>
+<p>Haz doble clic en los nodos para editar el texto. Haz clic en dos nodos para conectarlos. Haz clic en las conexiones para eliminarlas.</p>
+
+<div class="controls">
+  <button onclick="exportFullGraph()">Exportar Malla</button>
+  <button onclick="document.getElementById('file-input').click()">Importar Malla</button>
+  <button onclick="loadServerGraph()">Cargar Malla Propuesta</button>
+  <button onclick="saveGraph()">Guardar en Navegador</button>
+  <button onclick="loadGraph()">Cargar desde Navegador</button>
+  <button onclick="showCourseListEditor()">Editar Lista de Cursos</button>
+  <button onclick="clearGraph()">Limpiar Conexiones</button>
+  <button onclick="resetNodePositions()">Reiniciar Posiciones</button>
+
+  <span id="loading-indicator" style="display:none;"><span class="loading"></span> Cargando...</span>
+  <input type="file" id="file-input" accept=".json" />
+</div>
+
+<div id="course-list-editor" style="display:none; margin-bottom:20px;">
+  <h3>Editar Lista de Cursos</h3>
+  <textarea id="course-list-textarea"></textarea>
+  <button onclick="updateCoursesFromText()">Actualizar Cursos</button>
+  <button onclick="document.getElementById('course-list-editor').style.display='none'">Cancelar</button>
+</div>
+
+<div id="cy-container">
+  <canvas id="grid-canvas"></canvas>
+  <div id="cy"></div>
+</div>
+
+<div id="node-editor">
+  <input type="text" id="node-edit-input" style="width:200px;">
+  <button onclick="saveNodeEdit()">Guardar</button>
+  <button onclick="cancelNodeEdit()">Cancelar</button>
+</div>
+
+<script>
+  // Lista de cursos por defecto
+  let courseLabels = [
+    "Introducción a las Matemáticas (Pre-Cálculo)",
+    "Cálculo I",
+    "Cálculo II",
+    "Cálculo Avanzado",
+    "Análisis Real",
+    "Ecuaciones Diferenciales Parciales",
+    "Teoría de la Medida",
+    "Ecuaciones Diferenciales Ordinarias",
+    "Análisis Complejo",
+    "Análisis Numérico",
+    "Matemáticas Discretas",
+    "Álgebra",
+    "Álgebra Lineal",
+    "Álgebra Avanzada",
+    "Optimización",
+    "Álgebra Abstracta I",
+    "Algebra Abstracta II",
+    "Probabilidades",
+    "Inferencia Estadística",
+    "Procesos Estocásticos",
+    "Programación I (Bioinformática) o Programación Estructurada (Videojuegos)",
+    "Programación Avanzada (Bioinformática) o Programación orientada a objetos (Videojuegos)",
+    "Algoritmos y Estructuras de Datos (Bioinformática)",
+    "Bases de Datos (Bioinformática)",
+    "Minería de Datos (Bioinformática)",
+    "Visualización y Comunicación de Datos",
+    "Introducción a la Ingeniería Matemática",
+    "Laboratorio?",
+    "Modelamiento Matemático",
+    "Física General (Bioinformática)",
+    "Electricidad y Magnetismo (Bioinformática)",
+    "Ing. Económica y Evaluación de Proyectos (Ingeniería)",
+    "Otro curso o un electivo?"
+  ];
+
+  // Variables globales
+  let elements = [];
+  let cy;
+  let selectedNode = null;
+  let currentlyEditingNode = null;
+  const COLUMNS = 11;
+  const ROWS = 1;
+  const COLUMN_WIDTH = 150;
+  const ROW_HEIGHT = 150;
+
+  // Función para dibujar la cuadrícula de fondo
+  function drawGrid() {
+    const canvas = document.getElementById('grid-canvas');
+    const ctx = canvas.getContext('2d');
+    const width = canvas.width = canvas.offsetWidth;
+    const height = canvas.height = canvas.offsetHeight;
+    
+    ctx.clearRect(0, 0, width, height);
+    ctx.strokeStyle = '#e0e0e0';
+    ctx.lineWidth = 1;
+    
+    // Dibujar líneas verticales (columnas)
+    for (let i = 0; i <= COLUMNS; i++) {
+      const x = i * (width / COLUMNS);
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, height);
+      ctx.stroke();
+    }
+    
+    // Dibujar líneas horizontales (filas)
+    for (let i = 0; i <= ROWS; i++) {
+      const y = i * (height / ROWS);
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(width, y);
+      ctx.stroke();
+    }
+  }
+
+  // Inicializar el gráfico
+  function initializeGraph() {
+    // Redibujar la cuadrícula
+    drawGrid();
+    
+    // Volver a dibujar cuando cambie el tamaño
+    window.addEventListener('resize', drawGrid);
+    
+    // Limpiar gráfico existente
+    if (cy) {
+      cy.destroy();
+    }
+
+    // Crear nodos con posiciones en cuadrícula de 10 columnas
+    elements = [];
+    
+    courseLabels.forEach((label, index) => {
+      const row = Math.floor(index / COLUMNS);
+      const col = index % COLUMNS;
+      const id = 'n' + index;
+      
+      elements.push({ 
+        data: { id, label },
+        position: { 
+          x: col * COLUMN_WIDTH + 100, 
+          y: row * ROW_HEIGHT + 100 
+        }
+      });
+    });
+
+    cy = cytoscape({
+      container: document.getElementById('cy'),
+      elements: elements,
+      style: [
+        {
+          selector: 'node',
+          style: {
+            'label': 'data(label)',
+            'text-valign': 'center',
+            'text-halign': 'center',
+            'text-wrap': 'wrap',
+            'text-max-width': '110px',
+            'background-color': '#6bb1f8',
+            'shape': 'roundrectangle',
+            'width': 'label',
+            'height': 'label',
+            'padding': '12px',
+            'font-size': '13px',
+            'border-width': '0px',
+            'border-color': '#f00'
+          }
+        },
+        {
+          selector: 'node:selected',
+          style: {
+            'background-color': '#f55',
+            'border-width': '3px'
+          }
+        },
+        {
+          selector: 'edge',
+          style: {
+            'width': 2,
+            'line-color': '#aaa',
+            'target-arrow-color': '#aaa',
+            'target-arrow-shape': 'triangle',
+            'curve-style': 'bezier',
+            'label': 'data(label)',
+            'text-rotation': 'autorotate',
+            'text-margin-x': '10px',
+            'text-margin-y': '10px',
+            'font-size': '10px'
+          }
+        }
+      ],
+      layout: {
+        name: 'preset'
+      }
+    });
+
+    // Lógica para crear conexiones
+    cy.on('tap', 'node', function(evt){
+      const node = evt.target;
+      if (!selectedNode) {
+        selectedNode = node;
+        node.addClass('selected');
+      } else if (selectedNode === node) {
+        selectedNode.removeClass('selected');
+        selectedNode = null;
+      } else {
+        cy.add({ 
+          group: 'edges', 
+          data: { 
+            source: selectedNode.id(), 
+            target: node.id(),
+            label: `requisito`
+          } 
+        });
+        selectedNode.removeClass('selected');
+        selectedNode = null;
+      }
+    });
+
+    // Eliminar conexión al hacer clic
+    cy.on('tap', 'edge', function(evt){
+      evt.target.remove();
+    });
+
+    // Editar nodo al hacer doble clic
+    cy.on('dbltap', 'node', function(evt){
+      const node = evt.target;
+      currentlyEditingNode = node;
+      const editor = document.getElementById('node-editor');
+      document.getElementById('node-edit-input').value = node.data('label');
+      
+      // Posicionar editor cerca del nodo
+      const nodePos = node.renderedPosition();
+      editor.style.left = (nodePos.x + 20) + 'px';
+      editor.style.top = (nodePos.y + 20) + 'px';
+      editor.style.display = 'block';
+    });
+  }
+
+  // Inicializar el gráfico
+  initializeGraph();
+
+  // Funciones para editar nodos
+  function saveNodeEdit() {
+    if (currentlyEditingNode) {
+      const newLabel = document.getElementById('node-edit-input').value;
+      currentlyEditingNode.data('label', newLabel);
+      cancelNodeEdit();
+    }
+  }
+
+  function cancelNodeEdit() {
+    document.getElementById('node-editor').style.display = 'none';
+    currentlyEditingNode = null;
+  }
+
+  // Editar lista de cursos
+  function showCourseListEditor() {
+    const editor = document.getElementById('course-list-editor');
+    document.getElementById('course-list-textarea').value = courseLabels.join('\n');
+    editor.style.display = 'block';
+  }
+
+  function updateCoursesFromText() {
+    const newText = document.getElementById('course-list-textarea').value;
+    courseLabels = newText.split('\n').filter(line => line.trim() !== '');
+    document.getElementById('course-list-editor').style.display = 'none';
+    initializeGraph();
+  }
+
+  // Cambiar disposición
+  function changeLayout() {
+    const layoutName = document.getElementById('layout-selector').value;
+    if (layoutName === 'preset') {
+      cy.nodes().positions(function(node) {
+        return node.position();
+      });
+      return;
+    }
+    
+    cy.layout({
+      name: layoutName,
+      animate: true,
+      animationDuration: 500
+    }).run();
+  }
+
+  // Exportar conexiones
+  function downloadEdges() {
+    const edges = cy.edges().map(edge => ({
+      source: cy.getElementById(edge.data('source')).data('label'),
+      target: cy.getElementById(edge.data('target')).data('label'),
+      relationship: edge.data('label')
+    }));
+
+    const blob = new Blob([JSON.stringify(edges, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "conexiones_cursos.json";
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  // Exportar mapa completo
+  function exportFullGraph() {
+    const graphData = {
+      nodes: cy.nodes().map(node => ({
+        id: node.id(),
+        label: node.data('label'),
+        position: node.position()
+      })),
+      edges: cy.edges().map(edge => ({
+        source: edge.data('source'),
+        target: edge.data('target'),
+        label: edge.data('label')
+      })),
+      courseLabels: courseLabels
+    };
+    
+    const blob = new Blob([JSON.stringify(graphData, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "mapa_curricular_completo.json";
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  // Guardar en el navegador
+  function saveGraph() {
+    const graphData = {
+      nodes: cy.nodes().map(node => ({
+        id: node.id(),
+        label: node.data('label'),
+        position: node.position()
+      })),
+      edges: cy.edges().map(edge => ({
+        source: edge.data('source'),
+        target: edge.data('target'),
+        label: edge.data('label')
+      })),
+      courseLabels: courseLabels
+    };
+    
+    localStorage.setItem('courseGraphComplete', JSON.stringify(graphData));
+    alert('¡Mapa guardado en el navegador!');
+  }
+
+  // Cargar desde el navegador
+  function loadGraph() {
+    const saved = localStorage.getItem('courseGraphComplete');
+    if (saved) {
+      const graphData = JSON.parse(saved);
+      if (graphData.courseLabels) {
+        courseLabels = graphData.courseLabels;
+      }
+      loadGraphData(graphData);
+      alert('¡Mapa cargado desde el navegador!');
+    } else {
+      alert('¡No se encontró ningún mapa guardado en el navegador!');
+    }
+  }
+
+  // Importar archivo
+  document.getElementById('file-input').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      try {
+        const graphData = JSON.parse(e.target.result);
+        if (graphData.courseLabels) {
+          courseLabels = graphData.courseLabels;
+        }
+        loadGraphData(graphData);
+        alert('¡Mapa importado correctamente!');
+      } catch (error) {
+        alert('Error al importar: ' + error.message);
+      }
+    };
+    reader.readAsText(file);
+  });
+
+  // Cargar mapa predeterminado del servidor
+  function loadServerGraph() {
+    showLoading(true);
+    fetch('malla-default.json')
+      .then(response => {
+        if (!response.ok) throw new Error('Error en la respuesta del servidor');
+        return response.json();
+      })
+      .then(graphData => {
+        if (graphData.courseLabels) {
+          courseLabels = graphData.courseLabels;
+        }
+        loadGraphData(graphData);
+        alert('¡Mapa predeterminado cargado desde el servidor!');
+      })
+      .catch(error => {
+        alert('Error al cargar del servidor: ' + error.message);
+        initializeGraph();
+      })
+      .finally(() => showLoading(false));
+  }
+
+  // Función para cargar datos del gráfico
+  function loadGraphData(graphData) {
+    if (graphData.courseLabels) {
+      courseLabels = graphData.courseLabels;
+    }
+    
+    initializeGraph();
+    
+    if (graphData.nodes) {
+      graphData.nodes.forEach(node => {
+        const cyNode = cy.getElementById(node.id);
+        if (cyNode) {
+          cyNode.position(node.position);
+        }
+      });
+    }
+    
+    if (graphData.edges) {
+      graphData.edges.forEach(edge => {
+        cy.add({
+          group: 'edges',
+          data: {
+            source: edge.source,
+            target: edge.target,
+            label: edge.label || 'requisito'
+          }
+        });
+      });
+    }
+    
+    cy.layout({ name: 'preset' }).run();
+  }
+
+  // Limpiar conexiones
+  function clearGraph() {
+    if (confirm('¿Estás seguro de que quieres eliminar todas las conexiones?')) {
+      cy.edges().remove();
+    }
+  }
+
+  // Reiniciar posiciones a la cuadrícula de 10 columnas
+  function resetNodePositions() {
+    if (confirm('¿Restablecer todas las posiciones a la cuadrícula predeterminada?')) {
+      cy.nodes().forEach((node, index) => {
+        const row = Math.floor(index / COLUMNS);
+        const col = index % COLUMNS;
+        node.position({
+          x: col * COLUMN_WIDTH + 100,
+          y: row * ROW_HEIGHT + 100
+        });
+      });
+      
+      cy.layout({ name: 'preset' }).run();
+    }
+  }
+
+  // Mostrar indicador de carga
+  function showLoading(show) {
+    document.getElementById('loading-indicator').style.display = show ? 'inline-block' : 'none';
+  }
+
+  // Al cargar la página: intentar cargar del navegador primero, luego del servidor
+  window.addEventListener('load', function() {
+    const saved = localStorage.getItem('courseGraphComplete');
+    if (saved) {
+      loadGraph();
+    } else {
+      loadServerGraph();
+    }
+  });
+</script>
+
+</body>
+</html>
