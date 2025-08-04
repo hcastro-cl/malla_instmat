@@ -102,9 +102,9 @@
     },
     {
       "id": "n10",
-      "title": "Matemáticas Discretas?",
+      "title": "Inteligencia Artificial en Matemáticas",
       "semester": 8,
-      "description": "U1. Grafos\nU2. Algoritmos\nU3. Complejidad (P vs NP)",
+      "description": "",
       "position": {
         "x": 879.7821602252649,
         "y": -97.33121460037167
@@ -126,8 +126,8 @@
       "semester": 2,
       "description": "U1. Matrices y sistemas de ecuaciones lineales.\nU2. Espacios vectoriales de dimensión finita\nU3. Transformaciones Lineales y diagonalización",
       "position": {
-        "x": -129.8525767484831,
-        "y": 243.90093605407395
+        "x": -144.70424359002226,
+        "y": 227.69911768148586
       }
     },
     {
@@ -136,8 +136,8 @@
       "semester": 3,
       "description": "Profundizar lo visto en los cursos anteriores (demostraciones), contenidos nuevos",
       "position": {
-        "x": 53.77137832702185,
-        "y": 244.0363645567541
+        "x": 41.62001454758075,
+        "y": 238.63575843255805
       }
     },
     {
@@ -156,8 +156,8 @@
       "semester": 5,
       "description": "",
       "position": {
-        "x": 391.8475039462869,
-        "y": 245.0849819445312
+        "x": 401.29856466362975,
+        "y": 257.2363457239722
       }
     },
     {
@@ -176,8 +176,8 @@
       "semester": 4,
       "description": "",
       "position": {
-        "x": 207.97239052771815,
-        "y": 146.02750459145886
+        "x": 209.32254205876706,
+        "y": 182.48159592978217
       }
     },
     {
@@ -256,8 +256,8 @@
       "semester": 8,
       "description": "",
       "position": {
-        "x": 880.8667519423456,
-        "y": 413.6604221294405
+        "x": 884.9172065354927,
+        "y": 408.2598160052445
       }
     },
     {
@@ -322,7 +322,7 @@
     },
     {
       "id": "n32",
-      "title": "Otro curso o un electivo?",
+      "title": "Series Temporales",
       "semester": 8,
       "description": "",
       "position": {
@@ -366,8 +366,8 @@
       "semester": 10,
       "description": "",
       "position": {
-        "x": 1217.515269459364,
-        "y": -86.86405810663796
+        "x": 1209.4143602730699,
+        "y": 77.85442868134115
       }
     },
     {
@@ -681,8 +681,8 @@
       "target": "n27"
     },
     {
-      "source": "n22",
-      "target": "n10"
+      "source": "n19",
+      "target": "n28"
     },
     {
       "source": "n1",
@@ -691,10 +691,6 @@
     {
       "source": "n12",
       "target": "n17"
-    },
-    {
-      "source": "n19",
-      "target": "n28"
     }
   ],
   "courseLabels": [
