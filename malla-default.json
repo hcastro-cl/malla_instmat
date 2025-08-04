@@ -54,7 +54,7 @@
       "id": "n5",
       "title": "Ecuaciones Diferenciales Avanzado",
       "semester": 7,
-      "description": "U1. Teoría de EDOs\nU1. Intro a EDP (Ecuaciones del Laplace, Calor, Ondas)\nU2. Métodos de resolución. Transformada de Fourier\n",
+      "description": "U1. Teoría de EDOs (Existencia y unicidad, estabilidad, soluciones periodicas)\nU1. Intro a EDP (Ecuaciones del Laplace, Calor, Ondas)\nU2. Transformada de Fourier\n",
       "position": {
         "x": 709.2535132846347,
         "y": -106.87231968354129
