@@ -94,7 +94,7 @@
       "id": "n9",
       "title": "Análisis Numérico",
       "semester": 6,
-      "description": "",
+      "description": "Sistemas estructurados, métodos iterativos, valores y vectores propios, interpolacion, sistemas de ecuaciones, optimización numérica, EDOs numéricas\n\nEn Ingeniería tienen cursos \"Métodos Numéricos\"\n",
       "position": {
         "x": 561.3839171396329,
         "y": 21.23582765815837
@@ -136,8 +136,8 @@
       "semester": 3,
       "description": "Profundizar lo visto en los cursos anteriores (demostraciones), contenidos nuevos",
       "position": {
-        "x": 41.62001454758075,
-        "y": 238.63575843255805
+        "x": 54.090090045088374,
+        "y": 235.86463054422302
       }
     },
     {
@@ -176,8 +176,8 @@
       "semester": 4,
       "description": "",
       "position": {
-        "x": 209.32254205876706,
-        "y": 182.48159592978217
+        "x": 213.4792338912696,
+        "y": 165.85482859977202
       }
     },
     {
@@ -286,8 +286,8 @@
       "semester": 8,
       "description": "Formulación, modelamiento, simulación.\n\nPodría ser un curso colegiado donde se usen Ecuaciones Diferenciales, Probabilidad, Estadística, Combinatoria, etc",
       "position": {
-        "x": 882.447115880829,
-        "y": 81.40263102976489
+        "x": 879.5710317316679,
+        "y": 45.451579165251495
       }
     },
     {
@@ -316,8 +316,8 @@
       "semester": 7,
       "description": "Lo imparten en Ingeniería",
       "position": {
-        "x": 720.4069833055927,
-        "y": 531.8873871096765
+        "x": 729.0352357530759,
+        "y": 553.4580182283845
       }
     },
     {
@@ -417,7 +417,7 @@
       "description": "",
       "position": {
         "x": 50.83830320159791,
-        "y": 763.305512957763
+        "y": 770.4957233306657
       }
     },
     {
