@@ -11,9 +11,10 @@
     }
     #cy-container {
       position: relative;
-      width: 80%;
+      width: 100%;
       height: 800px;
       margin-bottom: 20px;
+      margin-right: 5px;
     }
     #cy {
       width: 100%;
@@ -167,9 +168,25 @@
   </div>
 </div>
 
-<div id="cy-container">
-  <canvas id="grid-canvas"></canvas>
-  <div id="cy"></div>
+<div style="display: flex; gap: 5px;">
+  <div style="flex: 1;">
+    <div id="cy-container">
+      <canvas id="grid-canvas"></canvas>
+      <div id="cy"></div>
+    </div>
+  </div>
+  <div style="width: 350px; min-width: 250px; background: #f7f7f7; border: 1px solid #ddd; border-radius: 8px; padding: 10px; font-size: 15px;margin-left: 5px;">
+    <h3>Instrucciones de uso</h3>
+    <ul>
+      <li><b>Agregar Curso:</b> Haz clic en "Agregar Curso" para crear un nuevo nodo.</li>
+      <li><b>Editar Curso:</b> Haz doble clic sobre un curso para modificar su nombre, semestre o descripción.</li>
+      <li><b>Eliminar Curso:</b> En el editor de curso, pulsa "Eliminar Curso".</li>
+      <li><b>Conectar Cursos:</b> Haz clic en un curso y luego en otro para crear una conexión (prerrequisito).</li>
+      <li><b>Eliminar Conexión:</b> Haz clic sobre una línea de conexión para borrarla.</li>
+      <li><b>Guardar/Cargar:</b> Usa los botones para guardar la malla en el navegador o cargarla.</li>
+      <li><b>Exportar/Importar:</b> Exporta la malla a un archivo JSON o impórtala desde uno.</li>
+    </ul>
+  </div>
 </div>
 
 <div id="node-editor">
