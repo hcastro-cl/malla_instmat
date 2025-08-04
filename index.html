@@ -148,18 +148,6 @@
 </head>
 <body>
 
-<div class="controls">
-  <button onclick="loadServerGraph()">Cargar Malla Propuesta</button>
-  <button onclick="saveGraph()">Guardar en Navegador</button>
-  <button onclick="loadGraph()">Cargar desde Navegador</button>
-  <button onclick="exportFullGraph()">Exportar Malla</button>
-  <button onclick="document.getElementById('file-input').click()">Importar Malla</button>
-  <button onclick="addNewNode()">Agregar Curso</button>
-  <span id="loading-indicator" style="display:none;"><span class="loading"></span> Cargando...</span>
-  <input type="file" id="file-input" accept=".json" />
-	<img src="logo.png" alt="Logo" style="height:40px; margin-left:auto;">	
-</div>
-
 <!-- Nueva sección: Leyenda de colores por semestre -->
 <div id="semester-legend">
   <div class="legend-items" id="legend-items-container">
@@ -170,6 +158,18 @@
 <div id="cy-container">
   <canvas id="grid-canvas"></canvas>
   <div id="cy"></div>
+</div>
+
+<div class="controls">
+  <button onclick="loadServerGraph()">Cargar Malla Propuesta</button>
+  <button onclick="saveGraph()">Guardar en Navegador</button>
+  <button onclick="loadGraph()">Cargar desde Navegador</button>
+  <button onclick="exportFullGraph()">Exportar Malla</button>
+  <button onclick="document.getElementById('file-input').click()">Importar Malla</button>
+  <button onclick="addNewNode()">Agregar Curso</button>
+  <span id="loading-indicator" style="display:none;"><span class="loading"></span> Cargando...</span>
+  <input type="file" id="file-input" accept=".json" />
+	<img src="logo.png" alt="Logo" style="height:40px; margin-left:auto;">	
 </div>
 
 <div id="node-editor">
