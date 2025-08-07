@@ -140,26 +140,26 @@ function drawGrid() {
 	ctx.clearRect(0, 0, width, height);
 	ctx.strokeStyle = '#e0e0e0';
 	ctx.lineWidth = 1;
-/*
-	// Dibujar líneas verticales (columnas)
-	for (let i = 0; i <= COLUMNS; i++) {
-		const x = i * (width / COLUMNS);
-		ctx.beginPath();
-		ctx.moveTo(x, 0);
-		ctx.lineTo(x, height);
-		ctx.stroke();
-	}
+	/*
+		// Dibujar líneas verticales (columnas)
+		for (let i = 0; i <= COLUMNS; i++) {
+			const x = i * (width / COLUMNS);
+			ctx.beginPath();
+			ctx.moveTo(x, 0);
+			ctx.lineTo(x, height);
+			ctx.stroke();
+		}
 
-	// Dibujar líneas horizontales (filas)
-	for (let i = 0; i <= ROWS; i++) {
-		const y = i * (height / ROWS);
-		ctx.beginPath();
-		ctx.moveTo(0, y);
-		ctx.lineTo(width, y);
-		ctx.stroke();
-	}
-*/
-  }
+		// Dibujar líneas horizontales (filas)
+		for (let i = 0; i <= ROWS; i++) {
+			const y = i * (height / ROWS);
+			ctx.beginPath();
+			ctx.moveTo(0, y);
+			ctx.lineTo(width, y);
+			ctx.stroke();
+		}
+	*/
+}
 
 // Inicializar el gráfico
 function initializeGraph() {
@@ -290,12 +290,12 @@ function initializeGraph() {
 
 		// Posicionar editor cerca del nodo
 		const nodePos = node.renderedPosition();
-    editor.style.position = 'fixed';
-    editor.style.left = '50%';
-    editor.style.top = '50%';
-    editor.style.transform = 'translate(-50%, -50%)';
-    editor.style.display = 'block';
-    /*
+		editor.style.position = 'fixed';
+		editor.style.left = '50%';
+		editor.style.top = '50%';
+		editor.style.transform = 'translate(-50%, -50%)';
+		editor.style.display = 'block';
+		/*
 		editor.style.left = (nodePos.x + 20) + 'px';
 		editor.style.top = (nodePos.y + 20) + 'px';
 		editor.style.display = 'block';
@@ -655,140 +655,142 @@ function deleteNode() {
 }
 
 async function exportToPDF() {
-  const { jsPDF } = window.jspdf;
+	const {
+		jsPDF
+	} = window.jspdf;
 
-  const pageWidth = 792;  // 11 * 72 (pt)
-  const pageHeight = 612; // 8.5 * 72 (pt)
-  const logoHeight = 50;
-  const logoWidth = 89;
-  const logoMargin = 20;
+	const pageWidth = 792; // 11 * 72 (pt)
+	const pageHeight = 612; // 8.5 * 72 (pt)
+	const logoHeight = 50;
+	const logoWidth = 89;
+	const logoMargin = 20;
 
-  // Cargar logo
-  const logoImg = new Image();
-  logoImg.src = 'logo.png'; // o base64 (data:image/png;base64,...)
-  await logoImg.decode();
+	// Cargar logo
+	const logoImg = new Image();
+	logoImg.src = 'logo.png'; // o base64 (data:image/png;base64,...)
+	await logoImg.decode();
 
-  // Exporta la imagen desde Cytoscape directamente (mejor que html2canvas)
-  const imgData = cy.png({
-    scale: 1, // alta resolución
-    full: true,
-    bg: "#ffffff",
-    output: 'base64uri'
-  });
+	// Exporta la imagen desde Cytoscape directamente (mejor que html2canvas)
+	const imgData = cy.png({
+		scale: 1, // alta resolución
+		full: true,
+		bg: "#ffffff",
+		output: 'base64uri'
+	});
 
-  const pdf = new jsPDF({
-    orientation: 'landscape',
-    unit: 'pt',
-    format: [pageWidth, pageHeight]
-  });
+	const pdf = new jsPDF({
+		orientation: 'landscape',
+		unit: 'pt',
+		format: [pageWidth, pageHeight]
+	});
 
-  // Crea una imagen para obtener dimensiones reales
-  const img = new Image();
-  img.src = imgData;
+	// Crea una imagen para obtener dimensiones reales
+	const img = new Image();
+	img.src = imgData;
 
-  await new Promise(resolve => {
-    img.onload = () => resolve();
-  });
+	await new Promise(resolve => {
+		img.onload = () => resolve();
+	});
 
-  // Ajusta tamaño de imagen
-  let imgWidth = pageWidth - 40;
-  let imgHeight = (img.height * imgWidth) / img.width;
-  if (imgHeight > pageHeight - 40) {
-    imgHeight = pageHeight - 40;
-    imgWidth = (img.width * imgHeight) / img.height;
-  }
+	// Ajusta tamaño de imagen
+	let imgWidth = pageWidth - 40;
+	let imgHeight = (img.height * imgWidth) / img.width;
+	if (imgHeight > pageHeight - 40) {
+		imgHeight = pageHeight - 40;
+		imgWidth = (img.width * imgHeight) / img.height;
+	}
 
-  // Página 1: Título y grafo centrado
-  pdf.setFontSize(20);
-  pdf.setFont('helvetica', 'bold');
-  const title = "Malla Curricular";
-  const titleWidth = pdf.getTextWidth(title);
-  pdf.text(title, (pageWidth - titleWidth) / 2, 40);  // centrado a y = 40
+	// Página 1: Título y grafo centrado
+	pdf.setFontSize(20);
+	pdf.setFont('helvetica', 'bold');
+	const title = "Malla Curricular";
+	const titleWidth = pdf.getTextWidth(title);
+	pdf.text(title, (pageWidth - titleWidth) / 2, 40); // centrado a y = 40
 
-  // Logo en esquina superior derecha
-  pdf.addImage(
-    logoImg,
-    'PNG',
-    pageWidth - logoWidth - logoMargin, // x
-    logoMargin,                         // y
-    logoWidth,                          // width
-    logoHeight                          // height
-  );
+	// Logo en esquina superior derecha
+	pdf.addImage(
+		logoImg,
+		'PNG',
+		pageWidth - logoWidth - logoMargin, // x
+		logoMargin, // y
+		logoWidth, // width
+		logoHeight // height
+	);
 
-  // Imagen del grafo
-  const topMargin = 60;
-  const availableHeight = pageHeight - topMargin - 20;
+	// Imagen del grafo
+	const topMargin = 60;
+	const availableHeight = pageHeight - topMargin - 20;
 
-  pdf.addImage(
-    imgData,
-    'PNG',
-    (pageWidth - imgWidth) / 2,
-    topMargin + ((availableHeight - imgHeight) / 2),
-    imgWidth,
-    imgHeight,
-    undefined,
-    'NONE'
-  );
+	pdf.addImage(
+		imgData,
+		'PNG',
+		(pageWidth - imgWidth) / 2,
+		topMargin + ((availableHeight - imgHeight) / 2),
+		imgWidth,
+		imgHeight,
+		undefined,
+		'NONE'
+	);
 
 
-  // --- Páginas siguientes: lista de cursos + logo ---
-  pdf.setFont('helvetica', 'normal');
-  const cursosPorSemestre = {};
-  cy.nodes().forEach(node => {
-    const semestre = node.data('semester') || 0;
-    if (!cursosPorSemestre[semestre]) cursosPorSemestre[semestre] = [];
-    cursosPorSemestre[semestre].push({
-      title: node.data('title'),
-      description: node.data('description') || ''
-    });
-  });
+	// --- Páginas siguientes: lista de cursos + logo ---
+	pdf.setFont('helvetica', 'normal');
+	const cursosPorSemestre = {};
+	cy.nodes().forEach(node => {
+		const semestre = node.data('semester') || 0;
+		if (!cursosPorSemestre[semestre]) cursosPorSemestre[semestre] = [];
+		cursosPorSemestre[semestre].push({
+			title: node.data('title'),
+			description: node.data('description') || ''
+		});
+	});
 
-  const semestresOrdenados = Object.keys(semesterNames).map(Number).filter(s => cursosPorSemestre[s] && cursosPorSemestre[s].length);
+	const semestresOrdenados = Object.keys(semesterNames).map(Number).filter(s => cursosPorSemestre[s] && cursosPorSemestre[s].length);
 
-  semestresOrdenados.forEach(semestre => {
-    pdf.addPage();
+	semestresOrdenados.forEach(semestre => {
+		pdf.addPage();
 
-    // Logo en esquina superior derecha
-    pdf.addImage(
-      logoImg,
-      'PNG',
-      pageWidth - logoWidth - logoMargin, // x
-      logoMargin,                         // y
-      logoWidth,                          // width
-      logoHeight                          // height
-    );
+		// Logo en esquina superior derecha
+		pdf.addImage(
+			logoImg,
+			'PNG',
+			pageWidth - logoWidth - logoMargin, // x
+			logoMargin, // y
+			logoWidth, // width
+			logoHeight // height
+		);
 
-    pdf.setFontSize(18);
-    pdf.text(semesterNames[semestre], 40, 40);
+		pdf.setFontSize(18);
+		pdf.text(semesterNames[semestre], 40, 40);
 
-    let y = 70;
-    pdf.setFontSize(13);
-    cursosPorSemestre[semestre].forEach(curso => {
-      pdf.text(`• ${curso.title}`, 50, y);
-      y += 18;
-      if (curso.description) {
-        const descLines = pdf.splitTextToSize(curso.description, pageWidth - 100);
-        descLines.forEach(line => {
-          pdf.text(line, 70, y);
-          y += 14;
-        });
-      }
-      y += 10;
-      if (y > pageHeight - 40) {
-        pdf.addPage();
+		let y = 70;
+		pdf.setFontSize(13);
+		cursosPorSemestre[semestre].forEach(curso => {
+			pdf.text(`• ${curso.title}`, 50, y);
+			y += 18;
+			if (curso.description) {
+				const descLines = pdf.splitTextToSize(curso.description, pageWidth - 100);
+				descLines.forEach(line => {
+					pdf.text(line, 70, y);
+					y += 14;
+				});
+			}
+			y += 10;
+			if (y > pageHeight - 40) {
+				pdf.addPage();
 
-        // Logo en nueva página
-        pdf.addImage(logoImg, 'PNG',
-          pageWidth - logoSize - logoMargin,
-          logoMargin,
-          logoSize,
-          logoSize
-        );
+				// Logo en nueva página
+				pdf.addImage(logoImg, 'PNG',
+					pageWidth - logoSize - logoMargin,
+					logoMargin,
+					logoSize,
+					logoSize
+				);
 
-        y = 40;
-      }
-    });
-  });
+				y = 40;
+			}
+		});
+	});
 
-  pdf.save('malla_curricular.pdf');
+	pdf.save('malla_curricular.pdf');
 }

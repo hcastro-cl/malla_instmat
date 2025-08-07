@@ -1,89 +1,91 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <title>Editor de Malla Curricular</title>
-  <script src="https://unpkg.com/cytoscape@3.24.0/dist/cytoscape.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <link rel="stylesheet" href="style.css">
+	<meta charset="utf-8">
+	<title>Editor de Malla Curricular</title>
+	<script src="https://unpkg.com/cytoscape@3.24.0/dist/cytoscape.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="controls">
-  <button onclick="loadServerGraph()">Cargar Malla Inicial</button>
-  <button onclick="saveGraph()">Guardar en Navegador</button>
-  <button onclick="loadGraph()">Cargar desde Navegador</button>
-  <button onclick="exportFullGraph()">Exportar Malla</button>
-  <button onclick="document.getElementById('file-input').click()">Importar Malla</button>
-  <button onclick="addNewNode()">Agregar Curso</button>
-  <button onclick="exportToPDF()">Exportar PDF</button>
-  <span id="loading-indicator" style="display:none;"><span class="loading"></span> Cargando...</span>
-  <input type="file" id="file-input" accept=".json" />
-	<img src="logo.png" alt="Logo" style="height:40px; margin-left:auto;">	
-</div>
+	<div class="controls">
+		<button onclick="loadServerGraph()">Cargar Malla Inicial</button>
+		<button onclick="saveGraph()">Guardar en Navegador</button>
+		<button onclick="loadGraph()">Cargar desde Navegador</button>
+		<button onclick="exportFullGraph()">Exportar Malla</button>
+		<button onclick="document.getElementById('file-input').click()">Importar Malla</button>
+		<button onclick="addNewNode()">Agregar Curso</button>
+		<button onclick="exportToPDF()">Exportar PDF</button>
+		<span id="loading-indicator" style="display:none;"><span class="loading"></span> Cargando...</span>
+		<input type="file" id="file-input" accept=".json" />
+		<img src="logo.png" alt="Logo" style="height:40px; margin-left:auto;">
+	</div>
 
-<div id="semester-legend">
-  <div class="legend-items" id="legend-items-container">
-    <!-- Los elementos de la leyenda se generarán automáticamente con JavaScript -->
-  </div>
-</div>
+	<div id="semester-legend">
+		<div class="legend-items" id="legend-items-container">
+			<!-- Los elementos de la leyenda se generarán automáticamente con JavaScript -->
+		</div>
+	</div>
 
-<div style="display: flex; gap: 5px;">
-  <div style="flex: 1;">
-    <div id="cy-container">
-      <canvas id="grid-canvas"></canvas>
-      <div id="cy"></div>
-    </div>
-  </div>
-  <div style="width: 350px; min-width: 250px; background: #f7f7f7; border: 1px solid #ddd; border-radius: 8px; padding: 10px; font-size: 15px;margin-left: 5px;">
-    <h3>Instrucciones de uso</h3>
-    <ul>
-      <li><b>Agregar Curso:</b> Haz clic en "Agregar Curso" para crear un nuevo nodo.</li>
-      <li><b>Editar Curso:</b> Haz doble clic sobre un curso para modificar su nombre, semestre o descripción.</li>
-      <li><b>Eliminar Curso:</b> En el editor de curso, pulsa "Eliminar Curso".</li>
-      <li><b>Conectar Cursos:</b> Haz clic en un curso y luego en otro para crear una conexión (prerrequisito).</li>
-      <li><b>Eliminar Conexión:</b> Haz clic sobre una línea de conexión para borrarla.</li>
-      <li><b>Guardar/Cargar:</b> Usa los botones para guardar la malla en el navegador o cargarla.</li>
-      <li><b>Exportar/Importar:</b> Exporta la malla a un archivo JSON o impórtala desde uno.</li>
-    </ul>
-  </div>
-</div>
+	<div style="display: flex; gap: 5px;">
+		<div style="flex: 1;">
+			<div id="cy-container">
+				<canvas id="grid-canvas"></canvas>
+				<div id="cy"></div>
+			</div>
+		</div>
+		<div style="width: 350px; min-width: 250px; background: #f7f7f7; border: 1px solid #ddd; border-radius: 8px; padding: 10px; font-size: 15px;margin-left: 5px;">
+			<h3>Instrucciones de uso</h3>
+			<ul>
+				<li><b>Agregar Curso:</b> Haz clic en "Agregar Curso" para crear un nuevo nodo.</li>
+				<li><b>Editar Curso:</b> Haz doble clic sobre un curso para modificar su nombre, semestre o descripción.</li>
+				<li><b>Eliminar Curso:</b> En el editor de curso, pulsa "Eliminar Curso".</li>
+				<li><b>Conectar Cursos:</b> Haz clic en un curso y luego en otro para crear una conexión (prerrequisito).</li>
+				<li><b>Eliminar Conexión:</b> Haz clic sobre una línea de conexión para borrarla.</li>
+				<li><b>Guardar/Cargar:</b> Usa los botones para guardar la malla en el navegador o cargarla.</li>
+				<li><b>Exportar/Importar:</b> Exporta la malla a un archivo JSON o impórtala desde uno.</li>
+			</ul>
+		</div>
+	</div>
 
-<div id="node-editor">
-  <h3 style="margin-top: 0;">Editar Curso</h3>
-  <label for="node-edit-title">Título del curso:</label>
-  <input type="text" id="node-edit-title">
-  
-  <label for="node-edit-semester">Semestre:</label>
-  <select id="node-edit-semester">
-    <option value="0">No asignado</option>
-    <option value="1">Semestre 1</option>
-    <option value="2">Semestre 2</option>
-    <option value="3">Semestre 3</option>
-    <option value="4">Semestre 4</option>
-    <option value="5">Semestre 5</option>
-    <option value="6">Semestre 6</option>
-    <option value="7">Semestre 7</option>
-    <option value="8">Semestre 8</option>
-    <option value="9">Semestre 9</option>
-    <option value="10">Semestre 10</option>
-  </select>
-  
-  <label for="node-edit-description">Descripción:</label>
-  <textarea id="node-edit-description"></textarea>
-  
-  <div id="node-editor-buttons">
-    <button onclick="saveNodeEdit()">Guardar</button>
-    <button onclick="cancelNodeEdit()">Cancelar</button>
-	<button onclick="deleteNode()">Eliminar Curso</button>
-  </div>
-</div>
+	<div id="node-editor">
+		<h3 style="margin-top: 0;">Editar Curso</h3>
+		<label for="node-edit-title">Título del curso:</label>
+		<input type="text" id="node-edit-title">
 
-<div id="tooltip" class="tooltip" style="display: none;"></div>
+		<label for="node-edit-semester">Semestre:</label>
+		<select id="node-edit-semester">
+			<option value="0">No asignado</option>
+			<option value="1">Semestre 1</option>
+			<option value="2">Semestre 2</option>
+			<option value="3">Semestre 3</option>
+			<option value="4">Semestre 4</option>
+			<option value="5">Semestre 5</option>
+			<option value="6">Semestre 6</option>
+			<option value="7">Semestre 7</option>
+			<option value="8">Semestre 8</option>
+			<option value="9">Semestre 9</option>
+			<option value="10">Semestre 10</option>
+		</select>
 
-<script src="main.js"></script>
+		<label for="node-edit-description">Descripción:</label>
+		<textarea id="node-edit-description"></textarea>
+
+		<div id="node-editor-buttons">
+			<button onclick="saveNodeEdit()">Guardar</button>
+			<button onclick="cancelNodeEdit()">Cancelar</button>
+			<button onclick="deleteNode()">Eliminar Curso</button>
+		</div>
+	</div>
+
+	<div id="tooltip" class="tooltip" style="display: none;"></div>
+
+	<script src="main.js"></script>
 
 </body>
-</html>
 
+</html>
